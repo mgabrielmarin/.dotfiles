@@ -45,6 +45,8 @@
 ;; Text size and font
 (set-face-attribute 'default nil :font "Monospace-15")
 
+;; Add line numbers
+(global-display-line-numbers-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
