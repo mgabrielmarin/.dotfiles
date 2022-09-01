@@ -51,6 +51,11 @@ keys = [
     Key([mod], "r", lazy.run_extension(
       extension.DmenuRun(
         dmenu_prompt=">",
+        dmenu_font="sans",
+        background="#000000",
+        foreground="#614051",
+        selected_background="#808000",
+        selected_foreground="#614051"
     ))),
     # Volume keys
     Key([], "XF86AudioMicMute",
@@ -94,6 +99,7 @@ layouts = [
       border_normal="#111111",
       border_focus="#808000",
       border_width=2,
+      margin=2
     ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
@@ -121,7 +127,9 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayout(),
-                widget.GroupBox(),
+                widget.GroupBox(
+                  this_current_screen_border='808000'  
+                ),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Battery(),
