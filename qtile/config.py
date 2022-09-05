@@ -44,7 +44,8 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
@@ -65,7 +66,13 @@ keys = [
     Key([], "XF86AudioRaiseVolume",
       lazy.spawn("pactl set-sink-volume 0 +5%")),
     Key([], "XF86AudioLowerVolume",
-      lazy.spawn("pactl set-sink-volume 0 -5%"))
+      lazy.spawn("pactl set-sink-volume 0 -5%")),
+    # Light keys
+    Key([], "XF86MonBrightnessUp",
+      lazy.spawn("light -A 5")),
+    Key([], "XF86MonBrightnessDown",
+      lazy.spawn("light -U 5"))
+ 
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -123,34 +130,31 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    Screen(
-        top=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(
-                  this_current_screen_border='808000'  
-                ),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Battery(),
-                widget.PulseVolume(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox("default config", name="default"),
-                #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
-            ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+  Screen(
+    top=bar.Bar(
+      [
+        widget.CurrentLayout(),
+        widget.GroupBox(
+          this_current_screen_border='808000'  
         ),
+        widget.Prompt(),
+        widget.WindowName(),
+        widget.Backlight(
+          backlight_name='intel_backlight'),
+        widget.Battery(),
+        widget.PulseVolume(),
+        widget.Chord(
+          chords_colors={
+            "launch": ("#ff0000", "#ffffff"),
+          },
+          name_transform=lambda name: name.upper(),
+        ),
+        widget.Systray(),
+        widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+        ],
+      24,
     ),
+  ),
 ]
 
 # Drag floating layouts.
