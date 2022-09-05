@@ -1,18 +1,22 @@
+scrolling:
+  history: 5000
+
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#ffffff'
+
 font:
   normal:
     family: inconsolata 
     style: Regular
-
   bold:
     family: inconsolata 
     style: Bold 
-
   italic:
     family: inconsolata 
     style: Italic
-
   bold_italic:
     family: inconsolata 
     style: Bold Italic 
-
   size: 14
