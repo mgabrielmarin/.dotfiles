@@ -35,6 +35,7 @@
 ;; Disable toolbar
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; Frame size
 (add-to-list 'default-frame-alist '(height . 55))
@@ -43,7 +44,8 @@
 (add-to-list 'default-frame-alist '(left . -1))
 
 ;; Text size and font
-(set-face-attribute 'default nil :font "Monospace-15")
+;;(set-face-attribute 'default nil :font "Monospace-15")
+(set-face-attribute 'default nil :font "Liberation Mono-16")
 
 ;; Add line numbers
 (global-display-line-numbers-mode)
