@@ -1,0 +1,10 @@
+vim.cmd('syntax on')
+vim.cmd('set number')
+vim.cmd('set ruler')
+vim.cmd('set ai')
+vim.cmd('set hlsearch')
+vim.cmd('set expandtab')
+vim.cmd('set tabstop=2')
+vim.cmd('set shiftwidth=2')
+vim.cmd('highlight Comment ctermfg=green')
+
