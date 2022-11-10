@@ -1,0 +1,31 @@
+###########################
+# xbindkeys configuration #
+###########################
+
+# Mute microphone
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+  XF86AudioMicMute
+
+# Mute volume 
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  XF86AudioMute
+
+# Volume up 
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+  XF86AudioRaiseVolume
+
+# Volume down 
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+  XF86AudioLowerVolume
+
+# Brightness up
+"light -A 5"
+  XF86MonBrightnessUp
+
+# Brightness down 
+"light -U 5"
+  XF86MonBrightnessDown
+
+##################################
+# End of xbindkeys configuration #
+##################################
