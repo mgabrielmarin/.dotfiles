@@ -1,3 +1,3 @@
 # My configuration
 
-Programs that I use on daily basis
+Programs that I use 
