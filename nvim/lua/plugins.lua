@@ -9,5 +9,10 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'Olical/conjure'
 	use 'Olical/aniseed'
-  use 'Mofiqul/dracula.nvim'
+  -- use 'Mofiqul/dracula.nvim'
+  use 'tpope/vim-dispatch'
+  use 'clojure-vim/vim-jack-in'
+  use 'radenling/vim-dispatch-neovim'
+ 
 end)
+

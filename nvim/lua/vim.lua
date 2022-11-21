@@ -7,4 +7,5 @@ vim.cmd('set expandtab')
 vim.cmd('set tabstop=2')
 vim.cmd('set shiftwidth=2')
 vim.cmd('highlight Comment ctermfg=green')
+vim.cmd('highlight Pmenu ctermbg=NONE')
 
