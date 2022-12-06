@@ -23,3 +23,6 @@ color listnormal_unread   white   default
 color listfocus_unread    white   default bold
 color info                white   default bold
 color article             white   default
+
+#browser
+browser "w3m %u"
