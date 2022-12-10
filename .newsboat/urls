@@ -1,8 +1,25 @@
 https://blog.rust-lang.org/feed.xml "rust"
+https://news.ycombinator.com/rss "hacker news"
 https://hnrss.org/newest "hacker_news"
 https://hnrss.org/newcomments "hacker_news"
 https://suckless.org/atom.xml "suckless"
 https://www.geeksforgeeks.org/feed/ "geeksforgeeks"
 https://lukesmith.xyz/index.xml "luke_smith"
 https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&isLocal=true "luke_smith_vids"
-https://people.kernel.org/read/feed/ "people kernel"
+http://community.schemewiki.org/?c=rss "sicp"
+https://archlinux.org/feeds/news/ "btw..arch"
+https://www.g4media.ro/feed "rom news" news
+
+##########
+# Videos #
+##########
+
+#####################
+# Default url pattern:
+# https://www.youtube.com/feeds/videos.xml?*_id=
+# Where * is (channel, playlist)
+# after id= we put the id of a certain link :D
+#####################
+
+https://www.youtube.com/feeds/videos.xml?playlist_id=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4 "lex fridman" podcast
+

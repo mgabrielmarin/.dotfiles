@@ -26,3 +26,17 @@ color article             white   default
 
 #browser
 browser "w3m %u"
+
+##########
+# videos #
+##########
+
+#####################
+# Default url pattern:
+# https://www.youtube.com/feeds/videos.xml?*_id=
+# Where * is (channel, playlist)
+# after id= we put the id of a certain link :D
+#####################
+
+macro m set browser "mpv %u" ; open-in-browser ; set browser "w3m %u"
+macro f set browser "firefox %u" ; open-in-browser ; set browser "w3m %u"
