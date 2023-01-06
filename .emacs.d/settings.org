@@ -15,15 +15,41 @@
 			bongo
 			volume
 			elfeed
+			elfeed-org
+			helm-pass
+			paredit
 			))
   (dolist (p my-packages)
     (when (not (package-installed-p p))
       (package-install p)))
 #+END_SRC
-* Auto-complete mode
+* Modes
+** Auto-complete mode
 #+begin_src emacs-lisp
   (require 'auto-complete)
   (global-auto-complete-mode t)
+#+end_src
+** Paredit mode
+#+begin_src emacs-lisp
+  (require 'paredit)
+  (paredit-mode t)
+#+end_src
+* Elfeed
+#+begin_src emacs-lisp
+
+  ;; Load elfeed-org
+  (require 'elfeed-org)
+
+  ;; Initialize elfeed-org
+  ;; This hooks up elfeed-org to read the configuration when elfeed
+  ;; is started with =M-x elfeed=
+  (elfeed-org)
+
+  ;; Elfeed source
+  (setq
+   rmh-elfeed-org-files
+   (list "~/.emacs.d/elfeed.org"))
+
 #+end_src
 * Turn off menu bar and inhibit startup screen
 #+BEGIN_SRC emacs-lisp
