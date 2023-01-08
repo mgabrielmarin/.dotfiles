@@ -1,8 +1,5 @@
 * Blogs :elfeed:
-** entry-title: \(linux\|tech\) :linux:
-** https://feeds.feedburner.com/InformationIsBeautiful
-** [[http://orgmode.org][Org Mode Links supported as well]]
-** https://bartoszmilewski.com/feed/
-** https://bartoszmilewski.com/comments/feed/
-** https://davidchristiansen.dk/feeds/all.atom.xml
-** https://davidchristiansen.dk/feeds/all.rss.xml
+** Open source :open-source:
+*** https://stallman.org/rss/rss.xml 
+*** https://lukesmith.xyz/index.xml
+

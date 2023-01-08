@@ -1,0 +1,72 @@
+* Packages installation
+#+BEGIN_SRC emacs-lisp
+  (require 'package)
+  (add-to-list 'package-archives
+	       '("melpa" . "https://melpa.org/packages/") t)
+  (package-initialize)
+  (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install 'use-package))
+  (defvar my-packages '(;; Put packages here...
+			ir-black-theme
+			auto-complete
+			geiser
+			magit
+			bongo
+			volume
+			elfeed
+			elfeed-org
+			helm-pass
+			paredit
+			))
+  (dolist (p my-packages)
+    (when (not (package-installed-p p))
+      (package-install p)))
+#+END_SRC
+* Modes
+** Auto-complete mode
+#+begin_src emacs-lisp
+  (require 'auto-complete)
+  (global-auto-complete-mode t)
+#+end_src
+** Paredit mode
+#+begin_src emacs-lisp
+  (require 'paredit)
+  (paredit-mode t)
+#+end_src
+* Elfeed
+#+begin_src emacs-lisp
+
+  ;; Load elfeed-org
+  (require 'elfeed-org)
+
+  ;; Initialize elfeed-org
+  ;; This hooks up elfeed-org to read the configuration when elfeed
+  ;; is started with =M-x elfeed=
+  (elfeed-org)
+
+  ;; Elfeed source
+  (setq
+   rmh-elfeed-org-files
+   (list "~/.emacs.d/elfeed.org"))
+
+#+end_src
+* Turn off menu bar and inhibit startup screen
+#+BEGIN_SRC emacs-lisp
+  (tool-bar-mode -1)
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (setq inhibit-startup-screen t)
+#+END_SRC
+* Aspect
+#+BEGIN_SRC emacs-lisp
+    (display-time-mode)
+    (set-face-attribute 'default nil :font "Liberation Mono-16")
+    (use-package ir-black-theme
+      :ensure t
+      :config
+      (load-theme 'ir-black t))
+    ;; Set transparency
+  (set-frame-parameter (selected-frame) 'alpha '(70 70))
+  (add-to-list 'default-frame-alist '(alpha 70 70))
+#+END_SRC
