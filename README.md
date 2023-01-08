@@ -1,6 +1,6 @@
 # My configuration
 
-Programs that I use and like 
+Programs that I use and like
 
 ## Install
 
@@ -9,3 +9,4 @@ Use `install` for installation
 
 ### MacOs
 Use `initmac` for installation
+
