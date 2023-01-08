@@ -1,3 +1,4 @@
+# other stuff
 *.o
 *~
 .newsboat/cache.db
@@ -5,3 +6,27 @@ nvim/node_modules/
 nvim/*.json
 nvim/plugin/
 __pycache__
+
+# emacs
+*~
+auto-save-list
+backups
+.places
+session.*
+tramp
+elpa
+*.elc
+.DS_Store
+.cask
+/url/
+/var/
+/ensime/
+/history
+/ido.last
+/recentf
+/projectile-bookmarks.eld
+/projectile.cache
+/transient/history.el
+/transient/values.el
+/forge-database.sqlite
+>>>>>>> 61f25b8 (added .gitignore)
