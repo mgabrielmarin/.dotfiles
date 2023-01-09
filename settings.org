@@ -68,7 +68,7 @@
   ;; font 
   (set-face-attribute
    'default nil
-   :font "DejaVu Sans Mono-14")
+   :font "Liberation Mono-16")
 
   ;; Highlight matching parantheses
   (show-paren-mode 1)
@@ -80,11 +80,10 @@
       (path
        (directory-files custom-theme-directory t "\\w+"))
     (when (file-directory-p path)
-      (add-to-lis 'custom-theme-load-path path)))
+      (add-to-list 'custom-theme-load-path path)))
 
   ;; Theme load
-  (defun use-default-theme ()
-    (load-theme 'default-black t))
-  (use-default-theme)
+  (load-theme 'gbrl-black t)
+
 
 #+END_SRC
