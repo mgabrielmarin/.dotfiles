@@ -10,20 +10,22 @@ __pycache__
 # emacs
 *~
 auto-save-list
+/etc/
+/url/
+/var/
+/history/
+elpa
 backups
 .places
 session.*
 tramp
-elpa
 *.elc
 .DS_Store
 .cask
-/url/
-/var/
 /ensime/
-/history
 /ido.last
 /recentf
+/eshell
 /projectile-bookmarks.eld
 /projectile.cache
 /transient/history.el

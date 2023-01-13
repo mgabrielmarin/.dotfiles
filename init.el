@@ -12,7 +12,7 @@
  '(custom-safe-themes
    '("30724de179936b9f039e2e30a59d9a2b8d33ea2794f092381d48be061877ef21" "9527feeeec43970b1d725bdc04e97eb2b03b15be982ac50089ad223d3c6f2920" "dea4b7d43d646aa06a4f705a58f874ec706f896c25993fcf73de406e27dc65ba" "d075d6df342ff5afff611349642a41019537790e7cd85075c493c525586d221f" default))
  '(package-selected-packages
-   '(org-mind-map helm-youtube graphviz-dot-mode pdf-tools slime ein lsp-java javap-mode company lsp-mode org-bullets org-superstar dictionary dired-rsync org-drill paredit hy-mode helm-pass typit typing typing-game elfeed ir-black-theme speed-type ytdl volume zenburn-theme use-package magit bongo)))
+   '(no-littering org-mind-map helm-youtube graphviz-dot-mode pdf-tools slime ein lsp-java javap-mode company lsp-mode org-bullets org-superstar dictionary dired-rsync org-drill paredit hy-mode helm-pass typit typing typing-game elfeed ir-black-theme speed-type ytdl volume zenburn-theme use-package magit bongo)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

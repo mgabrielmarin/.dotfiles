@@ -31,10 +31,12 @@
 			pdf-tools
 			graphviz-dot-mode
 			org-mind-map
+			no-littering
 			))
   (dolist (p my-packages)
     (when (not (package-installed-p p))
       (package-install p)))
+  (require 'no-littering) ;; keeps .emacs.d clean
 #+END_SRC
 * Modes
 ** Auto-complete mode
