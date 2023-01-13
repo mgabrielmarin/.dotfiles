@@ -3,6 +3,8 @@
   (require 'package)
   (add-to-list 'package-archives
 	       '("melpa" . "https://melpa.org/packages/") t)
+  (add-to-list 'package-archives
+	       '("org" . "https://orgmode.org/elpa/") t)
   (package-initialize)
   (unless (package-installed-p 'use-package)
     (package-refresh-contents)
@@ -26,6 +28,9 @@
 			cider
 			clojure-mode
 			flycheck
+			pdf-tools
+			graphviz-dot-mode
+			org-mind-map
 			))
   (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -47,6 +52,7 @@
   (add-hook 'clojure-mode-hook 'paredit-mode)
   (add-hook 'clojurescript-mode-hook 'paredit-mode)
   (add-hook 'clojurec-mode-hook 'paredit-mode)
+  (add-hook 'scheme-mode-hook 'paredit-mode)
   (paredit-mode t)
 #+end_src
 ** Lsp
@@ -54,6 +60,8 @@
   (add-hook 'clojure-mode-hook 'lsp)
   (add-hook 'clojurescript-mode-hook 'lsp)
   (add-hook 'clojurec-mode-hook 'lsp)
+  (require 'lsp-java)
+  (add-hook 'java-mode-hook 'lsp)
 #+end_src
 ** Company
 #+begin_src emacs-lisp
@@ -115,3 +123,51 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 #+END_SRC
+* LaTeX
+#+begin_src emacs-lisp
+
+  
+
+#+end_src
+* Org
+#+begin_src emacs-lisp
+
+  ;; Org Babel Languages
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (dot . t)))
+
+  ;; Graphviz images displaying
+  (defun my/fix-inline-images ()
+    (when org-inline-image-overlays
+      (org-redisplay-inline-images)))
+
+  (add-hook 'org-babel-after-execute-hook 'my/fix-inline-images)
+
+  ;; Org Mind Map
+  ;; This is an Emacs package that creates graphviz directed graphs from
+;; the headings of an org file
+(use-package org-mind-map
+  :init
+  (require 'ox-org)
+  :ensure t
+  ;; Uncomment the below if 'ensure-system-packages` is installed
+  ;;:ensure-system-package (gvgen . graphviz)
+  :config
+  (setq org-mind-map-engine "dot")       ; Default. Directed Graph
+  ;; (setq org-mind-map-engine "neato")  ; Undirected Spring Graph
+  ;; (setq org-mind-map-engine "twopi")  ; Radial Layout
+  ;; (setq org-mind-map-engine "fdp")    ; Undirected Spring Force-Directed
+  ;; (setq org-mind-map-engine "sfdp")   ; Multiscale version of fdp for the layout of large graphs
+  ;; (setq org-mind-map-engine "twopi")  ; Radial layouts
+  ;; (setq org-mind-map-engine "circo")  ; Circular Layout
+  )
+
+#+end_src
+* Experimental
+#+begin_src emacs-lisp
+
+
+  
+#+end_src

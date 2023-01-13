@@ -2,4 +2,6 @@
 ** Open source :open-source:
 *** https://stallman.org/rss/rss.xml 
 *** https://lukesmith.xyz/index.xml
-
+*** https://lwn.net/headlines/newrss
+** Emacs :emacs:
+*** https://protesilaos.com/codelog.xml
