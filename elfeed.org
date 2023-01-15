@@ -5,3 +5,5 @@
 *** https://lwn.net/headlines/newrss
 ** Emacs :emacs:
 *** https://protesilaos.com/codelog.xml
+*** https://emacsair.me/feed.xml
+*** http://trevorjim.com/feed.xml

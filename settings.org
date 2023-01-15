@@ -18,7 +18,9 @@
 			volume
 			elfeed
 			elfeed-org
+			helm 
 			helm-pass
+			helm-books
 			paredit
 			dictionary
 			org-bullets
@@ -38,6 +40,17 @@
       (package-install p)))
   (require 'no-littering) ;; keeps .emacs.d clean
 #+END_SRC
+* General
+** Default programs
+-Browser
+#+begin_src emacs-lisp
+  (setq browse-url-browser-function 'eww-browse-url)
+#+end_src
+* Bindings
+- helm-google
+  #+begin_src emacs-lisp
+    (global-set-key (kbd "C-h C--") 'helm-google)
+  #+end_src
 * Modes
 ** Auto-complete mode
 #+begin_src emacs-lisp
@@ -70,6 +83,15 @@
   (setq company-minimum-prefix-length 1
 	company-idle-delay 0.0)
 #+end_src
+** Just activation
+#+begin_src emacs-lisp
+
+  ;; clock
+  (display-time-mode)
+  ;; Highlight matching parantheses
+  (show-paren-mode 1)
+  
+#+end_src
 * Elfeed
 #+begin_src emacs-lisp
 
@@ -87,27 +109,17 @@
    (list "~/.emacs.d/elfeed.org"))
 
 #+end_src
-* Bars on/off
+* Helm 
+* Aspect
+** Bars on/off
 #+BEGIN_SRC emacs-lisp
   (tool-bar-mode -1)
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
   (setq inhibit-startup-screen t)
 #+END_SRC
-* Aspect
-#+BEGIN_SRC emacs-lisp
-
-  ;; clock
-  (display-time-mode)
-
-  ;; font 
-  (set-face-attribute
-   'default nil
-   :font "Liberation Mono-16")
-
-  ;; Highlight matching parantheses
-  (show-paren-mode 1)
-
+** Theme
+#+begin_src emacs-lisp
   ;; Set custom theme path
   (setq custom-theme-directory
 	(concat user-emacs-directory "themes"))
@@ -119,12 +131,13 @@
 
   ;; Theme load
   (load-theme 'gbrl-black t)
-
-  ;; Org fancy bullets
-  (require 'org-bullets)
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
-#+END_SRC
+#+end_src
+** Font
+#+begin_src emacs-lisp
+  (set-face-attribute
+   'default nil
+   :font "Liberation Mono-16")
+#+end_src
 * LaTeX
 #+begin_src emacs-lisp
 
@@ -133,6 +146,9 @@
 #+end_src
 * Org
 #+begin_src emacs-lisp
+
+  (require 'org-bullets)
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
   ;; Org Babel Languages
   (org-babel-do-load-languages
@@ -149,27 +165,27 @@
 
   ;; Org Mind Map
   ;; This is an Emacs package that creates graphviz directed graphs from
-;; the headings of an org file
-(use-package org-mind-map
-  :init
-  (require 'ox-org)
-  :ensure t
-  ;; Uncomment the below if 'ensure-system-packages` is installed
-  ;;:ensure-system-package (gvgen . graphviz)
-  :config
-  (setq org-mind-map-engine "dot")       ; Default. Directed Graph
-  ;; (setq org-mind-map-engine "neato")  ; Undirected Spring Graph
-  ;; (setq org-mind-map-engine "twopi")  ; Radial Layout
-  ;; (setq org-mind-map-engine "fdp")    ; Undirected Spring Force-Directed
-  ;; (setq org-mind-map-engine "sfdp")   ; Multiscale version of fdp for the layout of large graphs
-  ;; (setq org-mind-map-engine "twopi")  ; Radial layouts
-  ;; (setq org-mind-map-engine "circo")  ; Circular Layout
-  )
+  ;; the headings of an org file
+  (use-package org-mind-map
+    :init
+    (require 'ox-org)
+    :ensure t
+    ;; Uncomment the below if 'ensure-system-packages` is installed
+    ;;:ensure-system-package (gvgen . graphviz)
+    :config
+    (setq org-mind-map-engine "dot")       ; Default. Directed Graph
+    ;; (setq org-mind-map-engine "neato")  ; Undirected Spring Graph
+    ;; (setq org-mind-map-engine "twopi")  ; Radial Layout
+    ;; (setq org-mind-map-engine "fdp")    ; Undirected Spring Force-Directed
+    ;; (setq org-mind-map-engine "sfdp")   ; Multiscale version of fdp for the layout of large graphs
+    ;; (setq org-mind-map-engine "twopi")  ; Radial layouts
+    ;; (setq org-mind-map-engine "circo")  ; Circular Layout
+    )
 
 #+end_src
 * Experimental
 #+begin_src emacs-lisp
 
 
-  
+
 #+end_src
