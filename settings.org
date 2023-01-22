@@ -46,6 +46,12 @@
 #+begin_src emacs-lisp
   (setq browse-url-browser-function 'eww-browse-url)
 #+end_src
+** Eshell
+#+begin_src emacs-lisp
+
+
+  
+#+end_src
 * Bindings
 - helm-google
   #+begin_src emacs-lisp
@@ -58,6 +64,17 @@
   (add-hook 'org-mode-hook 'auto-complete-mode)
   (global-auto-complete-mode t)
 #+end_src
+** Flycheck
+#+begin_src emacs-lisp
+  (require 'flycheck)
+  (flycheck-mode t)
+  (add-hook 'org-mode-hook 'flycheck-mode)
+  (add-hook 'clojure-mode-hook 'flycheck-mode)
+  (add-hook 'clojurescript-mode-hook 'flycheck-mode)
+  (add-hook 'clojurec-mode-hook 'flycheck-mode)
+  (add-hook 'scheme-mode-hook 'flycheck-mode)
+
+#+end_src
 ** Paredit mode
 #+begin_src emacs-lisp
   (require 'paredit)
@@ -68,7 +85,6 @@
   (add-hook 'clojurescript-mode-hook 'paredit-mode)
   (add-hook 'clojurec-mode-hook 'paredit-mode)
   (add-hook 'scheme-mode-hook 'paredit-mode)
-  (paredit-mode t)
 #+end_src
 ** Lsp
 #+begin_src emacs-lisp
@@ -88,9 +104,10 @@
 
   ;; clock
   (display-time-mode)
+  (setq display-time-day-and-date 1)
   ;; Highlight matching parantheses
   (show-paren-mode 1)
-  
+
 #+end_src
 * Elfeed
 #+begin_src emacs-lisp
@@ -118,6 +135,13 @@
   (scroll-bar-mode -1)
   (setq inhibit-startup-screen t)
 #+END_SRC
+** Battery
+#+begin_src emacs-lisp
+
+  (fancy-battery-mode)
+  (setq fancy-battery-show-percentage 1)
+
+#+end_src
 ** Theme
 #+begin_src emacs-lisp
   ;; Set custom theme path
@@ -136,7 +160,7 @@
 #+begin_src emacs-lisp
   (set-face-attribute
    'default nil
-   :font "Liberation Mono-16")
+   :font "DeJaVu Sans Mono-20")
 #+end_src
 * LaTeX
 #+begin_src emacs-lisp
@@ -183,9 +207,21 @@
     )
 
 #+end_src
+* EXWM
+#+begin_src emacs-lisp
+
+  (require 'exwm-systemtray)
+  (exwm-systemtray-enable)
+  (setq exwm-systemtray-height 33)
+  (require 'exwm)
+  (exwm-enable)
+  ;;(require 'exwm-config)
+  ;;(exwm-config-default)
+
+#+end_src
 * Experimental
 #+begin_src emacs-lisp
 
-
+  
 
 #+end_src
