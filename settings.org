@@ -34,6 +34,8 @@
 			graphviz-dot-mode
 			org-mind-map
 			no-littering
+			fancy-battery
+			exwm
 			))
   (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -98,6 +100,13 @@
 #+begin_src emacs-lisp
   (setq company-minimum-prefix-length 1
 	company-idle-delay 0.0)
+#+end_src
+** Pdf tools
+#+begin_src emacs-lisp
+
+  (pdf-tools-install)
+  (add-hook 'pdf-view-mode 'pdf-view-midnight-minor-mode)
+   
 #+end_src
 ** Just activation
 #+begin_src emacs-lisp
@@ -212,7 +221,6 @@
 
   (require 'exwm-systemtray)
   (exwm-systemtray-enable)
-  (setq exwm-systemtray-height 33)
   (require 'exwm)
   (exwm-enable)
   ;;(require 'exwm-config)
