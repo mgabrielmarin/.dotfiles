@@ -1,3 +1,6 @@
+* Introduction
+#+TITLE: Emacs configuration
+#+AUTHOR: Gabriel Marin
 * Packages
 #+BEGIN_SRC emacs-lisp
   (require 'package)
@@ -44,7 +47,7 @@
 #+END_SRC
 * General
 ** Default programs
--Browser
+   -Browser
 #+begin_src emacs-lisp
   (setq browse-url-browser-function 'eww-browse-url)
 #+end_src
@@ -53,6 +56,14 @@
 
 
   
+#+end_src
+** Toggle fullscreen
+#+begin_src emacs-lisp
+
+  (custom-set-variables
+   '(initial-frame-alist
+     (quote ((fullscreen . maximized)))))
+
 #+end_src
 * Bindings
 - helm-google
@@ -105,7 +116,7 @@
 #+begin_src emacs-lisp
 
   (pdf-tools-install)
-  (add-hook 'pdf-view-mode 'pdf-view-midnight-minor-mode)
+  (add-hook 'pdf-view-mode-hook 'pdf-view-midnight-minor-mode)
    
 #+end_src
 ** Just activation
@@ -178,25 +189,38 @@
 
 #+end_src
 * Org
+** Org bullets
 #+begin_src emacs-lisp
 
   (require 'org-bullets)
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  
+#+end_src
 
-  ;; Org Babel Languages
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((emacs-lisp . t)
-     (dot . t)))
+** Org Babel Languages
+#+begin_src emacs-lisp
 
-  ;; Graphviz images displaying
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (dot . t)))
+     
+#+end_src
+
+** Graphviz images displaying
+#+begin_src emacs-lisp
+
   (defun my/fix-inline-images ()
     (when org-inline-image-overlays
       (org-redisplay-inline-images)))
 
   (add-hook 'org-babel-after-execute-hook 'my/fix-inline-images)
 
-  ;; Org Mind Map
+#+end_src
+** Org Mind Map
+#+begin_src emacs-lisp
+
+;; Org Mind Map
   ;; This is an Emacs package that creates graphviz directed graphs from
   ;; the headings of an org file
   (use-package org-mind-map
@@ -215,6 +239,12 @@
     ;; (setq org-mind-map-engine "circo")  ; Circular Layout
     )
 
+#+end_src
+** Org tabs natively
+#+begin_src emacs-lisp
+
+(setq org-src-tab-acts-natively t)
+   
 #+end_src
 * EXWM
 #+begin_src emacs-lisp
