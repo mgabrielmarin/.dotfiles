@@ -39,6 +39,7 @@
 			no-littering
 			fancy-battery
 			exwm
+			ivy
 			))
   (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -78,6 +79,7 @@
   (global-auto-complete-mode t)
 #+end_src
 ** Flycheck
+*** General
 #+begin_src emacs-lisp
   (require 'flycheck)
   (flycheck-mode t)
@@ -86,8 +88,11 @@
   (add-hook 'clojurescript-mode-hook 'flycheck-mode)
   (add-hook 'clojurec-mode-hook 'flycheck-mode)
   (add-hook 'scheme-mode-hook 'flycheck-mode)
-
 #+end_src
+*** Spell checker
+#+begin_src emacs-lisp
+  ;; Maybe
+#+end_src 
 ** Paredit mode
 #+begin_src emacs-lisp
   (require 'paredit)
@@ -111,6 +116,13 @@
 #+begin_src emacs-lisp
   (setq company-minimum-prefix-length 1
 	company-idle-delay 0.0)
+#+end_src
+** Ivy
+#+begin_src emacs-lisp
+
+(require 'ivy)
+(ivy-mode t)
+
 #+end_src
 ** Pdf tools
 #+begin_src emacs-lisp
