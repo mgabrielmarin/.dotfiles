@@ -12,35 +12,37 @@
   (unless (package-installed-p 'use-package)
     (package-refresh-contents)
     (package-install 'use-package))
-  (defvar my-packages '(;; Put packages here...
-			ir-black-theme
-			auto-complete
-			geiser
-			magit
-			bongo
-			volume
-			elfeed
-			elfeed-org
-			helm 
-			helm-pass
-			helm-books
-			paredit
-			dictionary
-			org-bullets
-			lsp-mode
-			company
-			lsp-treemacs
-			cider
-			clojure-mode
-			flycheck
-			pdf-tools
-			graphviz-dot-mode
-			org-mind-map
-			no-littering
-			fancy-battery
-			exwm
-			ivy
-			))
+  (defvar my-packages
+    '(;; Put packages here...
+      ir-black-theme
+      auto-complete
+      geiser
+      magit
+      bongo
+      volume
+      elfeed
+      elfeed-org
+      helm 
+      helm-pass
+      helm-books
+      paredit
+      dictionary
+      org-bullets
+      lsp-mode
+      company
+      lsp-treemacs
+      cider
+      clojure-mode
+      flycheck
+      pdf-tools
+      graphviz-dot-mode
+      org-mind-map
+      no-littering
+      fancy-battery
+      exwm
+      ivy
+      fish-completion
+      ))
   (dolist (p my-packages)
     (when (not (package-installed-p p))
       (package-install p)))
@@ -97,12 +99,15 @@
 #+begin_src emacs-lisp
   (require 'paredit)
   (paredit-mode t)
+
   ;; hooks
   (add-hook 'org-mode-hook 'paredit-mode)
+  (add-hook 'cider-repl-mode-hook #'paredit-mode)
   (add-hook 'clojure-mode-hook 'paredit-mode)
   (add-hook 'clojurescript-mode-hook 'paredit-mode)
   (add-hook 'clojurec-mode-hook 'paredit-mode)
   (add-hook 'scheme-mode-hook 'paredit-mode)
+
 #+end_src
 ** Lsp
 #+begin_src emacs-lisp
@@ -124,6 +129,11 @@
 (ivy-mode t)
 
 #+end_src
+** Fish
+   #+begin_src emacs-lisp
+     (require 'fish-completion)
+     (fish-completion-mode t)
+   #+end_src
 ** Pdf tools
 #+begin_src emacs-lisp
 

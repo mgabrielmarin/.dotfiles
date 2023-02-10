@@ -7,3 +7,6 @@
 *** https://protesilaos.com/codelog.xml
 *** https://emacsair.me/feed.xml
 *** http://trevorjim.com/feed.xml
+* News :elfeed:
+** Romania 
+*** https://www.g4media.ro/feed
