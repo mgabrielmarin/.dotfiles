@@ -43,6 +43,7 @@
       ivy
       fish-completion
       hy-mode
+      slime
       ))
   (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -82,10 +83,14 @@
      (quote ((fullscreen . maximized)))))
 
 #+end_src
-* Bindings
-- helm-google
-  #+begin_src emacs-lisp
-    (global-set-key (kbd "C-h C--") 'helm-google)
+* Languages
+** Common Lisp
+#+begin_src emacs-lisp
+
+  (load (expand-file-name "~/quicklisp/slime-helper.el"))
+  ;; Replace "sbcl" with the path to your implementation
+  (setq inferior-lisp-program "sbcl")
+
   #+end_src
 * Modes
 ** Auto-complete mode
@@ -165,6 +170,7 @@
   (show-paren-mode 1)
 
 #+end_src
+* Bindings
 * Elfeed
 #+begin_src emacs-lisp
 
