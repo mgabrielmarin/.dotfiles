@@ -87,7 +87,9 @@
 ** Common Lisp
 #+begin_src emacs-lisp
 
-  (load (expand-file-name "~/quicklisp/slime-helper.el"))
+  (if (file-exists-p "~/quicklisp/slime-helper.el")
+      (load (expand-file-name "~/quicklisp/slime-helper.el"))
+    (error "Please install slime-helper"))
   ;; Replace "sbcl" with the path to your implementation
   (setq inferior-lisp-program "sbcl")
 
@@ -288,17 +290,7 @@
 (setq org-src-tab-acts-natively t)
    
 #+end_src
-* EXWM
-#+begin_src emacs-lisp
 
-  (require 'exwm-systemtray)
-  (exwm-systemtray-enable)
-  (require 'exwm)
-  (exwm-enable)
-  ;;(require 'exwm-config)
-  ;;(exwm-config-default)
-
-#+end_src
 * Experimental
 #+begin_src emacs-lisp
 
