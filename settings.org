@@ -18,7 +18,7 @@
       auto-complete
       geiser
       magit
-      bongo
+      emms ;;bongo
       volume
       elfeed
       elfeed-org
@@ -44,6 +44,7 @@
       fish-completion
       hy-mode
       slime
+      racket-mode
       ))
   (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -73,6 +74,14 @@
 
   (set-exec-path-from-shell-PATH)
 
+
+#+end_src
+** Emms
+#+begin_src emacs-lisp
+
+  (require 'emms-setup)
+  (emms-all)
+  (emms-default-players)
 
 #+end_src
 ** Toggle fullscreen
