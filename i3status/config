@@ -1,0 +1,64 @@
+# Inspired from: https://i3wm.org/i3status/manpage.html
+
+general {
+    output_format = "i3bar"
+    separator = " "
+}
+
+order += "load"
+order += "cpu_temperature 0"
+order += "memory"
+order += "disk /"
+order += "ethernet eth0"
+order += "wireless wlan0"
+order += "run_watch DHCP"
+order += "tztime local"
+order += "battery 0"
+
+load {
+    format = "[load: %1min, %5min, %15min]"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input"
+}
+
+memory {
+        format = "M:%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+    format = "S:%avail"
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+wireless wlan0 {
+        format_up = "W: (%quality at %essid, %bitrate) %ip"
+        format_down = "W: down"
+}
+
+ethernet eth0 {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining %emptytime"
+        format_down = "No battery"
+        status_chr = "⚡ CHR"
+        status_bat = "🔋 BAT"
+        status_unk = "? UNK"
+        status_full = "☻ FULL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}

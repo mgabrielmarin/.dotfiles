@@ -1,3 +1,3 @@
 # My configuration
 
-Programs that I use 
+Programs that I use and like 
