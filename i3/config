@@ -187,10 +187,10 @@ default_border pixel 1
 default_floating_border pixel 1
 
 # Lockscreen bind
-bindsym Control+Mod1+l exec "i3lock -c 000000"
+bindsym Mod4+l exec "i3lock -c 000000"
 
 # Autolock
-exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
+exec "xautolock -detectsleep -time 15 -locker \"i3lock -c 000000\""
 
 # Brightness Controls & Redshift
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
