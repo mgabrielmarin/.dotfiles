@@ -20,18 +20,18 @@ load {
 }
 
 cpu_temperature 0 {
-        format = "T: %degrees °C"
+        format = "🌡 %degrees °C"
         path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input"
 }
 
 memory {
-        format = "M:%used"
+        format = "🧠%used"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }
 
 disk "/" {
-    format = "S:%avail"
+    format = "💽%avail"
 }
 
 run_watch DHCP {
@@ -39,8 +39,8 @@ run_watch DHCP {
 }
 
 wireless wlp4s0 {
-        format_up = "W: (%quality at %essid, %bitrate) %ip"
-        format_down = "W: down"
+        format_up = "📡%quality at %essid, %bitrate %ip"
+        format_down = "📡down"
 }
 
 ethernet eth0 {
@@ -49,7 +49,7 @@ ethernet eth0 {
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "📅%Y-%m-%d %H:%M:%S"
 }
 
 battery 0 {
@@ -58,7 +58,7 @@ battery 0 {
         status_chr = "⚡ CHR"
         status_bat = "🔋 BAT"
         status_unk = "? UNK"
-        status_full = "☻ FULL"
+        status_full = "😄 FULL"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
 }
