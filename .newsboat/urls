@@ -1,3 +1,6 @@
+############
+# Articles #
+############
 https://blog.rust-lang.org/feed.xml "rust"
 https://news.ycombinator.com/rss "hacker news"
 https://hnrss.org/newest "hacker_news"
@@ -9,6 +12,10 @@ https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&isLocal=true "lu
 http://community.schemewiki.org/?c=rss "sicp"
 https://archlinux.org/feeds/news/ "btw..arch"
 https://www.g4media.ro/feed "rom news" news
+https://www.freebsd.org/news/feed.xml "free bsd" bsd OS
+https://batsov.com/atom.xml "bozhidar batsov"
+https://people.kernel.org/linusw/feed/
+https://www.libhunt.com/feed 
 
 ##########
 # Videos #

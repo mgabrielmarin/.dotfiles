@@ -25,13 +25,13 @@ cpu_temperature 0 {
 }
 
 memory {
-        format = "🧠%used"
+        format = "🧠 %used"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }
 
 disk "/" {
-    format = "💽%avail"
+    format = "💽 %avail"
 }
 
 run_watch DHCP {
@@ -49,7 +49,7 @@ ethernet eth0 {
 }
 
 tztime local {
-        format = "📅%Y-%m-%d %H:%M:%S"
+        format = "📅 %Y-%m-%d %H:%M:%S"
 }
 
 battery 0 {
