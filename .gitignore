@@ -1,5 +1,6 @@
 *.o
 *~
 .newsboat/cache.db
-nvim/*
-!nvim/*.lua
+nvim/node_modules/
+nvim/*.json
+nvim/plugin/
