@@ -1,3 +1,5 @@
 *.o
 *~
 .newsboat/cache.db
+nvim/*
+!nvim/*.lua
