@@ -16,9 +16,14 @@ export BROWSER="brave"
 export TERMINAL="alacritty"
 
 # Paths
+## Cargo
 PATH="$HOME/.local/bin:$PATH"
+. "$HOME/.cargo/env"
+## Gopath
+GOPATH=$(go env GOPATH)
+PATH="$GOPATH/bin:$PATH"
           
+# X Window
 if [[ "$(tty)" = "/dev/tty1" ]]; then
   pgrep i3 || startx
 fi
-. "$HOME/.cargo/env"
