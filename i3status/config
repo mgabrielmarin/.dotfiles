@@ -5,7 +5,7 @@ general {
     separator = " "
 }
 
-order += "load"
+#order += "load"
 order += "cpu_temperature 0"
 order += "memory"
 order += "disk /"
@@ -49,16 +49,16 @@ ethernet eth0 {
 }
 
 tztime local {
-        format = "📅 %Y-%m-%d ⌚ %H:%M:%S"
+        format = "📅 %d-%m-%Y (%B) %H:%M:%S ⌚"
 }
 
 battery 0 {
-        format = "%status %percentage %remaining %emptytime"
+        format = "%status %percentage"
         format_down = "No battery"
-        status_chr = "⚡ CHR"
-        status_bat = "🔋 BAT"
-        status_unk = "? UNK"
-        status_full = "😄 FULL"
+        status_chr = "⚡"
+        status_bat = "🔋"
+        status_unk = "?"
+        status_full = "😄"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
 }
