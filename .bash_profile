@@ -15,6 +15,9 @@ export EDITOR='vim'
 export BROWSER="brave"
 export TERMINAL="alacritty"
 
+# binaries
+export PATH=$PATH:/usr/local/go/bin
+
 # Paths
 ## Cargo
 PATH="$HOME/.local/bin:$PATH"
