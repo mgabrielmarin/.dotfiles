@@ -38,5 +38,7 @@ browser "w3m %u"
 # after id= we put the id of a certain link :D
 #####################
 
-macro m set browser "mpv %u" ; open-in-browser ; set browser "w3m %u"
+
+macro m set browser "yt-dlp %u -o  - | mpv - -force-seekable=yes" ; open-in-browser ; set browser "w3m %u"
+#macro m set browser "mpv %u" ; open-in-browser ; set browser "w3m %u"
 macro f set browser "firefox %u" ; open-in-browser ; set browser "w3m %u"
