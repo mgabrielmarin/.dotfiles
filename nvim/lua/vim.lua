@@ -1,11 +1,20 @@
-vim.cmd('syntax on')
-vim.cmd('set number')
-vim.cmd('set ruler')
-vim.cmd('set ai')
-vim.cmd('set hlsearch')
-vim.cmd('set expandtab')
-vim.cmd('set tabstop=2')
-vim.cmd('set shiftwidth=2')
-vim.cmd('highlight Comment ctermfg=green')
-vim.cmd('highlight Pmenu ctermbg=NONE')
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 
+vim.opt.smartindent = true
+
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.ruler = true
+vim.opt.ai = true
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
+
+vim.opt.scrolloff = 8
+
+vim.opt.updatetime = 50
