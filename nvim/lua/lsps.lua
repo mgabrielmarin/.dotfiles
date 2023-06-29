@@ -1,3 +1,21 @@
+local lsp = require("lsp-zero")
+
+lsp.preset("recommended")
+
+lsp.ensure_installed({
+  'rust_analyzer',
+})
+
+lsp.on_attach(
+  function(client, bufnr)
+  lsp.default_keymaps(
+    {buffer = bufnr}
+  )
+end)
+
+lsp.setup()
+
+--[===[
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
@@ -19,7 +37,4 @@ lspconfig.rust_analyzer.setup {
 lspconfig.clangd.setup {
 
 }
-
-require'lspconfig'
-
-
+--]===]
