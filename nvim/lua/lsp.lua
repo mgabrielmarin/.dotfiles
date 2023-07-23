@@ -5,6 +5,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'rust_analyzer',
   'gopls',
+  'clangd',
 })
 
 lsp.set_preferences({
