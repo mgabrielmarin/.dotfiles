@@ -8,27 +8,5 @@ nvim/plugin/
 __pycache__
 
 # emacs
-*~
-auto-save-list
-/etc/
-/url/
-/var/
-/history/
-elpa
-backups
-.places
-session.*
-tramp
-*.elc
-.DS_Store
-.cask
-/ensime/
-/ido.last
-/recentf
-/eshell
-/projectile-bookmarks.eld
-/projectile.cache
-/transient/history.el
-/transient/values.el
-/forge-database.sqlite
->>>>>>> 61f25b8 (added .gitignore)
+.emacs.d/*
+!.emacs.d/init.el
