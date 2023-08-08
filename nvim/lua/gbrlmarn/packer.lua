@@ -2,7 +2,7 @@
 -- init.vim
 
 -- Only required if you have packer configured as 'opt'
-vim.cmd [[packadd packer.nvim]]
+vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
@@ -36,3 +36,4 @@ return require('packer').startup(function(use)
     }
 
 end)
+
