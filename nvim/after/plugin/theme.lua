@@ -1,4 +1,4 @@
-local cmd = vim.cmd
+--[==[
 local dracula = require("dracula")
 
 dracula.setup({
@@ -10,6 +10,17 @@ dracula.setup({
 })
 
 vim.cmd('colorscheme dracula')
--- vim.cmd('set background=dark')
--- vim.cmd('highlight Comment ctermfg=green guifg=green')
 
+]==]
+
+local catppuccin = require("catppuccin")
+
+catppuccin.setup({
+    color_overrides = {
+        all = {
+            base = "#000000",
+        },
+    }
+})
+
+vim.cmd.colorscheme "catppuccin"
