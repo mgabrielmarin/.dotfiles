@@ -1,4 +1,3 @@
---[==[
 local dracula = require("dracula")
 
 dracula.setup({
@@ -11,16 +10,3 @@ dracula.setup({
 
 vim.cmd('colorscheme dracula')
 
-]==]
-
-local catppuccin = require("catppuccin")
-
-catppuccin.setup({
-    color_overrides = {
-        all = {
-            base = "#000000",
-        },
-    }
-})
-
-vim.cmd.colorscheme "catppuccin"
