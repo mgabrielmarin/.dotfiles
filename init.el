@@ -29,8 +29,11 @@
 ;; Remove menu bar
 (when (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
-               
 
+;; Remove scroll bar
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
+               
 ;; Remove blinking cursor
 (blink-cursor-mode -1)
 
@@ -39,11 +42,6 @@
 
 ;; Disable startup screen
 (setq inhibit-startup-screen t)
-
-;; Nice scrolling
-(setq scroll-margin 0
-      scroll-conservatively 100000
-      scroll-preserve-screen-position 1)
 
 (when (fboundp 'pixel-scroll-precision-mode)
   (pixel-scroll-precision-mode t))
@@ -69,7 +67,7 @@
 
 ;; Indentation
 (setq-default indent-tabs-mode nil) ;; don't use tab to indent
-(setq-default tab-width 8)
+(setq-default tab-width 4)
 
 ;; Newline at the end of file
 (setq require-final-newline t)
@@ -143,6 +141,11 @@
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize)))
 
+(use-package pdf-tools
+  :ensure t
+  :config
+  (pdf-tools-install))
+
 (use-package rainbow-delimiters
   :ensure t)
 
@@ -177,6 +180,11 @@
   (add-hook 'cider-repl-mode-hook #'paredit-mode)
   (add-hook 'cider-repl-mode-hook #'rainbow-delimiters-mode))
 
+(use-package slime
+  :ensure t
+  :config
+  (setq inferior-lisp-program "sbcl"))
+
 (use-package flycheck-joker
   :ensure t)
 
@@ -188,8 +196,18 @@
 (use-package erlang
   :ensure t)
 
+(use-package go-mode
+  :ensure t)
+
 (use-package markdown-mode
   :ensure t)
+
+(use-package lsp-mode
+  :ensure t
+  :init 
+  (setq lsp-keymap-prefix "C-c l")
+  :hook ((go-mode . lsp))
+  :commands lsp)
 
 (use-package flycheck
   :ensure t
@@ -197,7 +215,25 @@
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
 (use-package company
-  :ensure t)
+  :ensure t
+  :config
+  (setq company-idle-delay 0.5)
+  (setq company-show-quick-access t)
+  (setq company-tooltip-limit 10)
+  (setq company-minimum-prefix-length 2)
+  (setq company-tooltip-align-annotations t)
+  ;; invert the navigation direction if the the completion popup-isearch-match
+  ;; is displayed on top (happens near the bottom of windows)
+  (setq company-tooltip-flip-when-above t)
+  (global-company-mode)
+  (diminish 'company-mode))
+
+
+(use-package tree-sitter
+  :ensure t
+  :config
+  (add-hook 'after-init-hook #'global-tree-sitter-hl-mode)
+  (add-hook 'after-init-hook #'global-tree-sitter-mode))
 
 (use-package ivy
   :ensure t)
@@ -209,6 +245,14 @@
   :config
   (setq rmh-elfeed-org-files
         (list "~/.emacs.d/elfeed.org")))
+
+(use-package crux
+  :ensure t
+  :bind (("C-c o" . crux-open-with)
+         ("C-c e" . crux-eval-and-replace)
+         ("C-c w" . crux-swap-windows)
+         ("C-c S" . crux-find-shell-init-file)
+         ("C-c s" . crux-ispell-word-then-abbrev)))
 
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
