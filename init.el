@@ -144,7 +144,8 @@
 (use-package pdf-tools
   :ensure t
   :config
-  (pdf-tools-install))
+  (pdf-tools-install)
+  (setq pdf-view-midnight-colors '("#ffffff" . "#000000")))
 
 (use-package rainbow-delimiters
   :ensure t)
@@ -173,6 +174,11 @@
   (add-hook 'inf-clojure-mode-hook #'paredit-mode)
   (add-hook 'inf-clojure-mode-hook #'rainbow-delimiters-mode))
 
+(use-package lisp-mode
+  :config
+  (add-hook 'lisp-mode-hook #'paredit-mode)
+  (add-hook 'lisp-mode-hook #'rainbow-delimiters-mode))
+
 (use-package cider
   :ensure t
   :config
@@ -183,7 +189,9 @@
 (use-package slime
   :ensure t
   :config
-  (setq inferior-lisp-program "sbcl"))
+  (setq inferior-lisp-program "sbcl")
+  (add-hook 'lisp-mode-hook #'paredit-mode)
+  (add-hook 'lisp-mode-hook #'rainbow-delimiters-mode))
 
 (use-package flycheck-joker
   :ensure t)
