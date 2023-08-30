@@ -247,7 +247,9 @@
   :ensure t)
 
 (use-package elfeed
-  :ensure t)
+  :ensure t
+  :config
+  (elfeed-org))
 (use-package  elfeed-org
   :ensure t
   :config

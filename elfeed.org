@@ -7,6 +7,10 @@
 *** https://protesilaos.com/codelog.xml
 *** https://emacsair.me/feed.xml
 *** http://trevorjim.com/feed.xml
+** Lisp :lisp:
+*** Clojure :clojure:
+**** https://practical.li/blog/feed.xml
+**** https://stuartsierra.com/feed
 * News :elfeed:
 ** Romania 
 *** https://www.g4media.ro/feed
