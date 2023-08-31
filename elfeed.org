@@ -11,6 +11,11 @@
 *** Clojure :clojure:
 **** https://practical.li/blog/feed.xml
 **** https://stuartsierra.com/feed
+**** https://blog.fogus.me/feed/
+**** https://adambard.com/blog/feed.xml
+**** https://insideclojure.org/feed.xml
+**** https://lambdaisland.com/feeds/episodes.atom
+**** https://gigasquidsoftware.com/atom.xml
 * News :elfeed:
 ** Romania 
 *** https://www.g4media.ro/feed
