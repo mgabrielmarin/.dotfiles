@@ -264,6 +264,12 @@
          ("C-c S" . crux-find-shell-init-file)
          ("C-c s" . crux-ispell-word-then-abbrev)))
 
+(use-package emms
+  :ensure t
+  :config
+  (emms-all)
+  (emms-default-players))
+
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
