@@ -8,6 +8,7 @@ fi
 
 # aliases
 alias ls='ls --color'
+alias lisp='rlwrap sbcl'
 
 # exports 
 export PS1='\[\e[35m\]\u@\h:\[\e[0m\]\[\e[32m\]\w\[\e[0m\] \$ '
