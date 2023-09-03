@@ -240,7 +240,6 @@
 (use-package tree-sitter
   :ensure t
   :config
-  (add-hook 'after-init-hook #'global-tree-sitter-hl-mode)
   (add-hook 'after-init-hook #'global-tree-sitter-mode))
 
 (use-package ivy
@@ -268,7 +267,9 @@
   :ensure t
   :config
   (emms-all)
-  (emms-default-players))
+  (emms-default-players)
+  (setq emms-source-file-default-directory "~/Music/")
+  :bind (("C-c C-r" . emms-toggle-repeat-track)))
 
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
