@@ -271,6 +271,11 @@
   (setq emms-source-file-default-directory "~/Music/")
   :bind (("C-c C-r" . emms-toggle-repeat-track)))
 
+(use-package org-drill
+  :ensure t)
+(use-package org-drill-table
+  :ensure t)
+
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
