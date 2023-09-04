@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -89,8 +89,8 @@ bindsym $mod+v split v
 bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+s layout stacking
-bindsym $mod+Shift+w layout tabbed
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
 bindsym $mod+Control+e layout toggle split
 
 # toggle tiling / floating
@@ -188,7 +188,7 @@ default_border pixel 1
 default_floating_border pixel 1
 
 # Lockscreen bind
-bindsym Mod4+l exec "i3lock -c 000000"
+bindsym $mod+o exec "i3lock -c 000000"
 
 # Autolock
 exec "xautolock -detectsleep -time 15 -locker \"i3lock -c 000000\""
