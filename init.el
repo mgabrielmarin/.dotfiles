@@ -78,6 +78,13 @@
 ;; delete the selection with a keypress
 (delete-selection-mode t)
 
+
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 ;; revert buffers automatically when underlying files are changed externaly
 (global-auto-revert-mode t)
 
@@ -268,13 +275,28 @@
   :config
   (emms-all)
   (emms-default-players)
-  (setq emms-source-file-default-directory "~/Music/")
   :bind (("C-c C-r" . emms-toggle-repeat-track)))
 
 (use-package org-drill
   :ensure t)
 (use-package org-drill-table
   :ensure t)
+
+(use-package undo-tree
+  :ensure t
+  :config
+  ;; autosave the undo-tree history
+  (setq undo-tree-history-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq undo-tree-auto-save-history t)
+  (global-undo-tree-mode +1)
+  (diminish 'undo-tree-mode))
+
+(use-package ace-window
+  :ensure t
+  :config
+  (global-set-key (kbd "s-w") 'ace-window)
+  (global-set-key [remap other-window] 'ace-window))
 
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
