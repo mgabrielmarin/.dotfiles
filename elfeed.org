@@ -7,6 +7,8 @@
 *** https://protesilaos.com/codelog.xml
 *** https://emacsair.me/feed.xml
 *** http://trevorjim.com/feed.xml
+*** https://andreyor.st/feed.xml
+*** https://project-mage.org/rss.xml
 ** Lisp :lisp:
 *** Clojure :clojure:
 **** https://practical.li/blog/feed.xml
