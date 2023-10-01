@@ -121,9 +121,7 @@
   :ensure t
   :config
   (load-theme 'dracula t)
-  (set-background-color "black")
-  (set-face-foreground 'font-lock-comment-face "darkgreen")
-  (set-face-foreground 'font-lock-comment-delimiter-face "darkgreen"))
+  (set-background-color "black"))
 
 (use-package diminish
   :ensure t
@@ -219,9 +217,7 @@
 
 (use-package lsp-mode
   :ensure t
-  :init 
-  (setq lsp-keymap-prefix "C-c l")
-  :hook ((go-mode . lsp))
+  :init (setq lsp-keymap-prefix "C-c l")
   :commands lsp)
 
 (use-package flycheck
