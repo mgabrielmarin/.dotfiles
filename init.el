@@ -274,7 +274,9 @@
   :bind (("C-c C-r" . emms-toggle-repeat-track)))
 
 (use-package org-drill
-  :ensure t)
+  :ensure t
+  :config
+  (setq org-drill-learn-fraction 0.8))
 (use-package org-drill-table
   :ensure t)
 
@@ -293,6 +295,10 @@
   :config
   (global-set-key (kbd "s-w") 'ace-window)
   (global-set-key [remap other-window] 'ace-window))
+
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
 
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
