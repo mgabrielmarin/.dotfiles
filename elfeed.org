@@ -1,6 +1,6 @@
 * Blogs :elfeed:
 ** Open source :open-source:
-*** https://stallman.org/rss/rss.xml 
+*** https://stallman.org/rss/rss.xml :ignore:
 *** https://lukesmith.xyz/index.xml
 *** https://lwn.net/headlines/newrss
 ** Emacs :emacs:
@@ -18,6 +18,9 @@
 **** https://insideclojure.org/feed.xml
 **** https://lambdaisland.com/feeds/episodes.atom
 **** https://gigasquidsoftware.com/atom.xml
-* News :elfeed:
-** Romania 
-*** https://www.g4media.ro/feed
+** Podcasts :podcasts:
+*** https://feeds.buzzsprout.com/1004689.rss
+
+** News                                                                :news:
+*** Romania :ro:
+**** https://www.g4media.ro/feed

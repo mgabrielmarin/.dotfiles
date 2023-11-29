@@ -4,6 +4,11 @@
 ;;
 ;; Author: Gabriel Marin <gbrlmarn@proton.me>
 ;; URL: https://github.com/gbrlmarn/.emacs.d
+;;
+;;; Commentary:
+;; My personal Emacs configuration.
+;;
+;;; Code:
 
 (require 'package)
 
@@ -101,6 +106,27 @@
 
 ;; Use eww by default
 (setq browse-url-browser-function 'eww-browse-url)
+
+;; check OS type
+(cond
+ ((string-equal system-type "windows-nt") ; Microsoft Windows
+  (progn
+    (message "Microsoft Windows")))
+ ((string-equal system-type "darwin") ; Mac OS X
+  (progn
+    ;; (setq mac-right-command-modifier      'super
+    ;;       ns-right-command-modifier       'super
+    ;;       mac-option-modifier             'meta
+    ;;       ns-option-modifier              'meta
+    ;;       mac-right-option-modifier       'none
+    ;;       ns-right-option-modifier        'none
+    ;;       )
+    (setq mac-right-option-modifier 'meta
+          ns-right-option-modifier 'meta)
+    (message "MacOS")))
+ ((string-equal system-type "gnu/linux") ; linux
+  (progn
+    (message "Linux"))))
 
 ;; Install use package
 (unless (package-installed-p 'use-package)
