@@ -69,9 +69,9 @@ keys = [
       lazy.spawn("pactl set-sink-volume 0 -5%")),
     # Light keys
     Key([], "XF86MonBrightnessUp",
-      lazy.spawn("light -A 5")),
+      lazy.spawn("xbacklight -inc 10")),
     Key([], "XF86MonBrightnessDown",
-      lazy.spawn("light -U 5"))
+      lazy.spawn("xbacklight -dec 10"))
  
 ]
 
@@ -142,7 +142,7 @@ screens = [
         widget.Backlight(
           backlight_name='intel_backlight'),
         widget.Battery(),
-        widget.PulseVolume(),
+        widget.Volume(),
         widget.Chord(
           chords_colors={
             "launch": ("#ff0000", "#ffffff"),
