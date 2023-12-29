@@ -4,3 +4,4 @@
 nvim/node_modules/
 nvim/*.json
 nvim/plugin/
+__pycache__
