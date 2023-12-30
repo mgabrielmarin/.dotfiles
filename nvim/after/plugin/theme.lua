@@ -4,7 +4,7 @@ dracula.setup({
   -- customize dracula color palette
   colors = {
     bg = "#000000",
-    comment = "#008000"
+    -- comment = "#008000"
   }
 })
 
