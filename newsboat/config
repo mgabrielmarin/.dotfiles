@@ -1,6 +1,8 @@
 # general settings
 auto-reload yes
-max-items 50
+# max-items 50
+
+external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 
 # unbind keys 
 unbind-key ENTER
@@ -19,29 +21,18 @@ bind-key h quit
 color background          white   default
 color listnormal          white   default
 color listfocus           white   default bold
-color listnormal_unread   white   default
-color listfocus_unread    white   default bold
+color listnormal_unread   blue    default
+color listfocus_unread    blue    default bold
 color info                white   default bold
 color article             white   default
 
-#browser
-browser "w3m %u"
+# macros
+browser linkhandler
+macro , open-in-browser
+#macro t set browser "qndl" ; open-in-browser ; set browser linkhandler
+macro t set browser "w3m" ; open-in-browser ; set browser linkhandler
+macro m set browser "yt-dlp -q %u -o  - | mpv - -force-seekable=yes &" ; open-in-browser ; set browser linkhandler
+macro f set browser "firefox %u" ; open-in-browser ; set browser linkhandler
+macro w set browser "lynx" ; open-in-browser ; set browser linkhandler
+macro c set browser "echo %u | xclip -r -sel c" ; open-in-browser ; set browser linkhandler
 
-##########
-# videos #
-##########
-
-#####################
-# Default url pattern:
-# https://www.youtube.com/feeds/videos.xml?*_id=
-# Where * is (channel, playlist)
-# after id= we put the id of a certain link :D
-#####################
-
-
-##########
-# macros #
-##########
-macro m set browser "yt-dlp -q %u -o  - | mpv - -force-seekable=yes &" ; open-in-browser ; set browser "w3m %u"
-#macro m set browser "mpv %u" ; open-in-browser ; set browser "w3m %u"
-macro f set browser "firefox %u" ; open-in-browser ; set browser "w3m %u"
