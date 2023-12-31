@@ -49,30 +49,30 @@ keys = [
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "r", lazy.run_extension(
-      extension.DmenuRun(
-        dmenu_prompt=">",
-        dmenu_font="sans",
-        background="#000000",
-        foreground="#ffffff",
-        selected_background="#808000",
-        selected_foreground="#614051"
+    Key([mod], "r", 
+        lazy.run_extension(
+            extension.DmenuRun(
+                dmenu_prompt=">",
+                dmenu_font="sans",
+                background="#000000",
+                foreground="#ffffff",
+                selected_background="#808000",
+                selected_foreground="#614051"
     ))),
     # Volume keys
     Key([], "XF86AudioMicMute",
-      lazy.spawn("pactl set-source-mute 1 toggle")),
+        lazy.spawn("pactl set-source-mute 1 toggle")),
     Key([], "XF86AudioMute",
-      lazy.spawn("pactl set-sink-mute 0 toggle")),
+        lazy.spawn("pactl set-sink-mute 0 toggle")),
     Key([], "XF86AudioRaiseVolume",
-      lazy.spawn("pactl set-sink-volume 0 +5%")),
+        lazy.spawn("pactl set-sink-volume 0 +5%")),
     Key([], "XF86AudioLowerVolume",
-      lazy.spawn("pactl set-sink-volume 0 -5%")),
+        lazy.spawn("pactl set-sink-volume 0 -5%")),
     # Light keys
     Key([], "XF86MonBrightnessUp",
-      lazy.spawn("xbacklight -inc 10")),
+        lazy.spawn("xbacklight -inc 10")),
     Key([], "XF86MonBrightnessDown",
-      lazy.spawn("xbacklight -dec 10"))
- 
+        lazy.spawn("xbacklight -dec 10"))
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -130,31 +130,28 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 screens = [
-  Screen(
-    top=bar.Bar(
-      [
-        widget.CurrentLayout(),
-        widget.GroupBox(
-          this_current_screen_border='808000'  
+    Screen(
+        top=bar.Bar(
+            [
+            widget.CurrentLayout(),
+            widget.GroupBox(this_current_screen_border='808000'),
+            widget.Prompt(),
+            widget.WindowName(),
+            widget.Backlight(backlight_name='intel_backlight'),
+            widget.Battery(),
+            widget.Volume(),
+            widget.Chord(
+                chords_colors = {
+                    "launch": ("#ff0000", "#ffffff"),
+                },
+                name_transform=lambda name: name.upper(),
+            ),
+            widget.Systray(),
+            widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+            ],
+            24,
         ),
-        widget.Prompt(),
-        widget.WindowName(),
-        widget.Backlight(
-          backlight_name='intel_backlight'),
-        widget.Battery(),
-        widget.Volume(),
-        widget.Chord(
-          chords_colors={
-            "launch": ("#ff0000", "#ffffff"),
-          },
-          name_transform=lambda name: name.upper(),
-        ),
-        widget.Systray(),
-        widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-        ],
-      24,
     ),
-  ),
 ]
 
 # Drag floating layouts.
