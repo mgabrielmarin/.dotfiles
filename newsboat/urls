@@ -32,3 +32,5 @@ https://www.hotnews.ro/rss ro news
 # Where * is (channel, playlist)
 # after id= we put the id of a certain link :D
 https://www.youtube.com/feeds/videos.xml?playlist_id=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4 video podcast
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA video luke
+
