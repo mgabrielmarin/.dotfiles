@@ -1,18 +1,22 @@
 # Articles 
-https://blog.rust-lang.org/feed.xml "rust"
-https://news.ycombinator.com/rss "hacker news"
-https://hnrss.org/newest "hacker_news"
-https://hnrss.org/newcomments "hacker_news"
-https://suckless.org/atom.xml "suckless"
-https://www.geeksforgeeks.org/feed/ "geeksforgeeks"
-https://lukesmith.xyz/index.xml "luke_smith"
-https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&isLocal=true "luke_smith_vids"
-http://community.schemewiki.org/?c=rss "sicp"
-https://archlinux.org/feeds/news/ "btw..arch"
-https://www.freebsd.org/news/feed.xml "free bsd" bsd OS
-https://batsov.com/atom.xml "bozhidar batsov"
-https://people.kernel.org/linusw/feed/
+https://blog.rust-lang.org/feed.xml
+https://news.ycombinator.com/rss
+https://hnrss.org/newest
+https://hnrss.org/newcomments
+https://suckless.org/atom.xml
+https://www.geeksforgeeks.org/feed
+https://lukesmith.xyz/index.xml luke
+https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&isLocal=true luke
 https://www.libhunt.com/feed 
+
+# Lisp
+https://batsov.com/atom.xml lisp
+http://community.schemewiki.org/?c=rss lisp
+
+# Linux 
+https://archlinux.org/feeds/news/ linux
+https://www.freebsd.org/news/feed.xml linux
+https://people.kernel.org/linusw/feed linux
 
 # News
 https://www.g4media.ro/feed ro news
@@ -27,4 +31,4 @@ https://www.hotnews.ro/rss ro news
 # https://www.youtube.com/feeds/videos.xml?*_id=
 # Where * is (channel, playlist)
 # after id= we put the id of a certain link :D
-https://www.youtube.com/feeds/videos.xml?playlist_id=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4 "lex fridman" podcast
+https://www.youtube.com/feeds/videos.xml?playlist_id=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4 video podcast
