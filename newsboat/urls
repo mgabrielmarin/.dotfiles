@@ -4,7 +4,6 @@ https://news.ycombinator.com/rss
 https://hnrss.org/newest
 https://hnrss.org/newcomments
 https://suckless.org/atom.xml
-https://www.geeksforgeeks.org/feed
 https://lukesmith.xyz/index.xml luke
 https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&isLocal=true luke
 https://www.libhunt.com/feed 
@@ -20,7 +19,6 @@ https://people.kernel.org/linusw/feed linux
 
 # News
 https://www.g4media.ro/feed ro news
-https://www.mediafax.ro/feed ro news
 https://www.jurnalul.ro/rss ro news
 https://www.libertatea.ro/feed ro news
 https://www.gandul.ro/feed ro news
