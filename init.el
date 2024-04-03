@@ -61,11 +61,20 @@
   (set-frame-font "DejaVu Sans Mono-18"))
  ((find-font (font-spec :name "Inconsolata"))
   (set-frame-font "Inconsolata-18")))
+(set-fontset-font "fontset-default" 'symbol "Noto Color Emoji") ;; emoji support
 
 ;; mode line settigs
 (line-number-mode t)
 (column-number-mode t)
 (size-indication-mode t)
+
+;; Set time in status bar
+(setq display-time-day-and-date t
+      display-time-24hr-format t
+      display-time-default-load-average nil
+      display-time-interval 60
+      display-time-format " %a%e %b, %H:%M ")
+(display-time-mode t)
 
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -82,7 +91,6 @@
 
 ;; delete the selection with a keypress
 (delete-selection-mode t)
-
 
 ;; store all backup and autosave files in the tmp dir
 (setq backup-directory-alist
