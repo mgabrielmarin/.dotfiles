@@ -187,7 +187,10 @@
   :ensure t
   :config
   (pdf-tools-install)
-  (setq pdf-view-midnight-colors '("#ffffff" . "#000000")))
+  (setq pdf-view-midnight-colors '("#ffffff" . "#000000"))
+  (add-hook 'pdf-view-mode-hook (lambda ()
+                                  (unless (eq major-mode 'pdf-view-mode)
+                                    (global-display-line-numbers-mode -1)))))
 
 (use-package rainbow-delimiters
   :ensure t)
@@ -326,12 +329,6 @@
   (setq undo-tree-auto-save-history t)
   (global-undo-tree-mode +1)
   (diminish 'undo-tree-mode))
-
-(use-package ace-window
-  :ensure t
-  :config
-  (global-set-key (kbd "s-w") 'ace-window)
-  (global-set-key [remap other-window] 'ace-window))
 
 (use-package which-key
   :ensure t
