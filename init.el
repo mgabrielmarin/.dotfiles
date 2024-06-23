@@ -67,6 +67,8 @@
 (line-number-mode t)
 (column-number-mode t)
 (size-indication-mode t)
+(global-display-line-numbers-mode t)
+(setq display-line-numbers 'relative)
 
 ;; Set time in status bar
 (setq display-time-day-and-date t
@@ -155,7 +157,8 @@
   :ensure t
   :config
   (load-theme 'dracula t)
-  (set-background-color "black"))
+  (set-background-color "black")
+  (set-face-attribute 'line-number nil :background "black"))
 
 (use-package diminish
   :ensure t
