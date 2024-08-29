@@ -1,8 +1,8 @@
 ;;; init.el --- Gabriel's Emacs configuration
 ;;
-;; Copyright © 2020-2023 Gabriel Marin
+;; Copyright © 2020-2024 Gabriel Marin
 ;;
-;; Author: Gabriel Marin <gbrlmarn@proton.me>
+;; Author: Gabriel Marin <marin.gabriel@protonmail.com>
 ;; URL: https://github.com/gbrlmarn/.emacs.d
 ;;
 ;;; Commentary:
@@ -53,12 +53,12 @@
 
 ;; Fonts
 (cond
+ ((find-font (font-spec :name "DejaVu Sans Mono"))
+  (set-frame-font "DejaVu Sans Mono-18"))
  ((find-font (font-spec :name "Cascadia Code"))
   (set-frame-font "Cascadia Code-18"))
  ((find-font (font-spec :name "Menlo"))
   (set-frame-font "Menlo-18"))
- ((find-font (font-spec :name "DejaVu Sans Mono"))
-  (set-frame-font "DejaVu Sans Mono-18"))
  ((find-font (font-spec :name "Inconsolata"))
   (set-frame-font "Inconsolata-18")))
 (set-fontset-font "fontset-default" 'symbol "Noto Color Emoji") ;; emoji support
