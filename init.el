@@ -68,7 +68,7 @@
 (column-number-mode t)
 (size-indication-mode t)
 (global-display-line-numbers-mode t)
-(setq display-line-numbers 'relative)
+(setq display-line-numbers-type 'relative)
 
 ;; Set time in status bar
 (setq display-time-day-and-date t
@@ -188,9 +188,7 @@
   :config
   (pdf-tools-install)
   (setq pdf-view-midnight-colors '("#ffffff" . "#000000"))
-  (add-hook 'pdf-view-mode-hook (lambda ()
-                                  (unless (eq major-mode 'pdf-view-mode)
-                                    (global-display-line-numbers-mode -1)))))
+  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1))))
 
 (use-package rainbow-delimiters
   :ensure t)
