@@ -22,5 +22,7 @@
 *** https://feeds.buzzsprout.com/1004689.rss
 
 ** News                                                                :news:
+*** International                                                       :int:
+**** https://disconnect.blog/rss/
 *** Romania :ro:
 **** https://www.g4media.ro/feed

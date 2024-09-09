@@ -6,6 +6,7 @@
 ;; URL: https://github.com/gbrlmarn/.emacs.d
 ;;
 ;;; Commentary:
+;;
 ;; My personal Emacs configuration.
 ;;
 ;;; Code:
@@ -68,7 +69,6 @@
 (column-number-mode t)
 (size-indication-mode t)
 (global-display-line-numbers-mode t)
-(setq display-line-numbers-type 'relative)
 
 ;; Set time in status bar
 (setq display-time-day-and-date t
@@ -236,9 +236,6 @@
   (add-hook 'lisp-mode-hook #'paredit-mode)
   (add-hook 'lisp-mode-hook #'rainbow-delimiters-mode))
 
-(use-package flycheck-joker
-  :ensure t)
-
 (use-package elixir-mode
   :ensure t
   :config
@@ -258,10 +255,10 @@
   :init (setq lsp-keymap-prefix "C-c l")
   :commands lsp)
 
-(use-package flycheck
+(use-package yasnippet
   :ensure t
   :config
-  (add-hook 'after-init-hook #'global-flycheck-mode))
+  (yas-global-mode))
 
 (use-package company
   :ensure t
