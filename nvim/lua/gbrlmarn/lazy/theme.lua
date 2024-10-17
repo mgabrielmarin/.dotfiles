@@ -62,6 +62,8 @@ return {
             })
 
             vim.cmd("colorscheme dracula")
+
+            UseTheme()
         end
     },
 }
