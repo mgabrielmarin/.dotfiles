@@ -6,8 +6,8 @@
 
 # Defaults
 export EDITOR="nvim"
-export TERMINAL="kitty"
-export TERMINAL_PROG="kitty"
+export TERMINAL="alacritty"
+export TERMINAL_PROG="alacritty"
 export BROWSER="firefox"
 
 # Variables 
