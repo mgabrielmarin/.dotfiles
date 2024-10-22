@@ -54,14 +54,12 @@
 
 ;; Fonts
 (cond
- ((find-font (font-spec :name "DejaVu Sans Mono"))
-  (set-frame-font "DejaVu Sans Mono-18"))
+ ((find-font (font-spec :name "Fira Code"))
+  (set-frame-font "Fira Code-18"))
  ((find-font (font-spec :name "Cascadia Code"))
   (set-frame-font "Cascadia Code-18"))
- ((find-font (font-spec :name "Menlo"))
-  (set-frame-font "Menlo-18"))
- ((find-font (font-spec :name "Inconsolata"))
-  (set-frame-font "Inconsolata-18")))
+ ((find-font (font-spec :name "DejaVu Sans Mono"))
+  (set-frame-font "DejaVu Sans Mono-18")))
 (set-fontset-font "fontset-default" 'symbol "Noto Color Emoji") ;; emoji support
 
 ;; mode line settigs
@@ -75,7 +73,7 @@
       display-time-24hr-format t
       display-time-default-load-average nil
       display-time-interval 60
-      display-time-format " %a%e %b, %H:%M ")
+      display-time-format " %a %b %e, %H:%M ")
 (display-time-mode t)
 
 ;; enable y/n answers
