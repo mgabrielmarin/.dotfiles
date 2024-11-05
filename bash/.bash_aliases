@@ -15,3 +15,5 @@ alias egrep='egrep --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 
+# diff
+alias diff='diff --color=auto'
