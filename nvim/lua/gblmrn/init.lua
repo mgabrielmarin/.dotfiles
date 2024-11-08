@@ -1,14 +1,14 @@
-require('gbrlmarn.vim')
-require('gbrlmarn.remap')
-require('gbrlmarn.lazy_init')
+require('gblmrn.vim')
+require('gblmrn.remap')
+require('gblmrn.lazy_init')
 
 local augroup = vim.api.nvim_create_augroup
-local GbrlmarnGroup = augroup('Gbrlmarn', {})
+local Gblmrngroup = augroup('Gblmrn', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd('LspAttach', {
-    group = GbrlmarnGroup,
+    group = GblmrnGroup,
     callback = function(e)
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)

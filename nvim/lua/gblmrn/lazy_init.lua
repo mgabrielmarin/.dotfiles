@@ -12,6 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath) 
 
 require("lazy").setup({
-    spec = "gbrlmarn.lazy",
+    spec = "gblmrn.lazy",
     change_detection = { notify = false }
 })

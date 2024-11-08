@@ -22,9 +22,6 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
-                clangd,
-                gopls,
-                rust_analyzer,
             },
             handlers = {
                 -- The first entry (without a key) will be the default handler
