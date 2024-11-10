@@ -8,3 +8,4 @@ ln -i -s $(pwd)/nvim ~/.config/nvim
 ln -i -s $(pwd)/alacritty ~/.config/alacritty
 ln -i -s $(pwd)/redshift ~/.config/redshift
 ln -i -s $(pwd)/.Xmodmap ~/.Xmodmap
+ln -i -s $(pwd)/lynx ~/.config/lynx
