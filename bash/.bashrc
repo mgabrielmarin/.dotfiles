@@ -53,4 +53,5 @@ export PATH="$PATH:/usr/local/bin"
 . "$HOME/.cargo/env"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/opt/bin" 
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
