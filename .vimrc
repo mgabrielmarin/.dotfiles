@@ -9,7 +9,7 @@ call plug#begin()
   Plug 'tpope/vim-sensible'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'arzg/vim-colors-xcode'
 call plug#end()
 
 " Basic
@@ -23,9 +23,10 @@ set hlsearch
 set ruler
 
 " Color
-colorscheme dracula
+colorscheme xcodedark 
 hi Normal ctermbg=16 guibg=#000000
 hi LineNr ctermbg=16 guibg=#000000
+hi EndOfBuffer ctermbg=16 guibg=#000000
 
 " Remaps
 " Make SPACE leader key
