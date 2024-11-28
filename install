@@ -11,3 +11,4 @@ ln -i -s $(pwd)/redshift ~/.config/
 ln -i -s $(pwd)/.Xmodmap ~/.Xmodmap
 ln -i -s $(pwd)/lynx ~/.config/
 ln -i -s $(pwd)/zathura ~/.config/
+ln -i -s $(pwd)/scripts ~/

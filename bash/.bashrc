@@ -42,16 +42,18 @@ if ! shopt -oq posix; then
 fi
 
 # Defaults
-export EDITOR="nvim"
+export EDITOR="vim"
 export TERMINAL="alacritty"
 export TERMINAL_PROG="alacritty"
 export BROWSER="firefox"
 
 # Paths
+. "$HOME/.cargo/env"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/bin"
-. "$HOME/.cargo/env"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH=$PATH:/usr/local/go/bin
-export PATH="$PATH:/opt/bin" 
+export PATH="$PATH:$HOME/scripts"
+
+# Lynx
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
