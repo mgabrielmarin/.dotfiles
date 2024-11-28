@@ -12,6 +12,7 @@ call plug#begin()
   Plug 'arzg/vim-colors-xcode'
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'
+  Plug 'mbbill/undotree'
 call plug#end()
 
 " Basic
@@ -23,6 +24,7 @@ set ai
 set number
 set hlsearch
 set ruler
+set noswapfile
 
 " Color
 colorscheme xcodedark 
@@ -35,6 +37,7 @@ hi EndOfBuffer ctermbg=16 guibg=#000000
 nnoremap <SPACE> <Nop>
 let mapleader = ' '
 nnoremap <leader>pf :FZF<CR>
+nnoremap <leader>ps :Rg<CR>
 " nnoremap <leader>pf :call fzf#run({'sink': 'e'})<CR>
 
 " Runtime path
@@ -59,7 +62,7 @@ function! s:on_lsp_buffer_enabled() abort
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
     let g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    autocmd! BufWritePre *.rs,*.go,*.[ch],*.[ch]pp call execute('LspDocumentFormatSync')
 
     " refer to doc to add more commands
 endfunction
@@ -69,3 +72,18 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+" Undotree
+nnoremap <leader>u :UndotreeToggle<CR>
+if has("persistent_undo")
+    let target_path = expand('~/.undodir')
+
+    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+
+    let &undodir=target_path
+    set undofile
+endif
