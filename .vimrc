@@ -12,6 +12,8 @@ call plug#begin()
   Plug 'arzg/vim-colors-xcode'
   Plug 'prabirshrestha/vim-lsp'
   Plug 'mattn/vim-lsp-settings'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
   Plug 'mbbill/undotree'
 call plug#end()
 
