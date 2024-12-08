@@ -17,7 +17,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/fun/repos/.dotfiles/nvim/lua/gblmrn/packer.lua<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/fun/repos/.dotfiles/nvim/lua/gbrlmarn/packer.lua<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")

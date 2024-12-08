@@ -1,9 +1,9 @@
 #!/bin/bash
 
-time=$(expr $1 \* 60)
+time=$(("$1" * 60))
 if [ -z "$time" ]; then
     sleep 25*60 && notify-send "break";
 else
-    sleep $time && notify-send "break";
+    sleep "$time" && notify-send "break";
 fi
 
