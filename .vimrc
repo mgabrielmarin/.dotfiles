@@ -35,9 +35,10 @@ hi LineNr ctermbg=16 guibg=#000000
 hi EndOfBuffer ctermbg=16 guibg=#000000
 
 " Remaps
-" Make SPACE leader key
-nnoremap <SPACE> <Nop>
-let mapleader = ' '
+" Leader key
+let mapleader = ","
+
+" Fuzzy Finder
 nnoremap <leader>pf :FZF<CR>
 nnoremap <leader>ps :Rg<CR>
 " nnoremap <leader>pf :call fzf#run({'sink': 'e'})<CR>
