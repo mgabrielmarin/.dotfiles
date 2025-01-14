@@ -39,9 +39,11 @@ hi EndOfBuffer ctermbg=16 guibg=#000000
 let mapleader = ","
 
 " Fuzzy Finder
-nnoremap <leader>pf :FZF<CR>
-nnoremap <leader>ps :Rg<CR>
-" nnoremap <leader>pf :call fzf#run({'sink': 'e'})<CR>
+nnoremap <leader>ff :FZF<CR>
+nnoremap <leader>fs :Rg<CR>
+nnoremap <leader>fh :History<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fg :GitFiles<CR>
 
 " Runtime path
 set rtp+=$HOME/.vim/plugged/fzf/bin/fzf
