@@ -17,7 +17,8 @@ export GOPATH=$HOME/go
 # Add to path
 export PATH="$GOPATH/bin:$PATH"
 
-. "$HOME/.cargo/env"
+# Tmux sessionzer
+bind -x '"\C-f": tmux-sessionizer'
 
 # Start graphical on user's current tty if not allready running.
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx

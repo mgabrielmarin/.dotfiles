@@ -48,12 +48,13 @@ export TERMINAL_PROG="alacritty"
 export BROWSER="firefox"
 
 # Paths
-. "$HOME/.cargo/env"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/bin"
-export PATH="$PATH:/opt/nvim-linux64/bin"
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/scripts"
 
 # Lynx
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
