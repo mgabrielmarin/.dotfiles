@@ -1,14 +1,28 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-ln -i -s $(pwd)/bash/.bashrc ~/.bashrc
-ln -i -s $(pwd)/bash/.bash_profile ~/.bash_profile
-ln -i -s $(pwd)/bash/.bash_aliases ~/.bash_aliases
-ln -i -s $(pwd)/.vimrc ~/.vimrc
-ln -i -s $(pwd)/tmux ~/.config/
-ln -i -s $(pwd)/nvim ~/.config/
-ln -i -s $(pwd)/alacritty ~/.config/
-ln -i -s $(pwd)/redshift ~/.config/
-ln -i -s $(pwd)/.Xmodmap ~/.Xmodmap
-ln -i -s $(pwd)/lynx ~/.config/
-ln -i -s $(pwd)/zathura ~/.config/
-ln -i -s $(pwd)/scripts ~/
+# package managers
+APT=$(which apt)
+
+# nvim
+if [[ -n $APT ]]; then
+    sudo apt install git tmux curl lua5.1
+fi
+
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+sudo rm -rf "$(pwd)"/nvim-linux-x86_64.tar.gz
+
+# symlinks
+ln -i -s "$(pwd)"/bash/.bashrc ~/.bashrc
+ln -i -s "$(pwd)"/bash/.bash_profile ~/.bash_profile
+ln -i -s "$(pwd)"/bash/.bash_aliases ~/.bash_aliases
+ln -i -s "$(pwd)"/.vimrc ~/.vimrc
+ln -i -s "$(pwd)"/tmux ~/.config/
+ln -i -s "$(pwd)"/nvim ~/.config/
+ln -i -s "$(pwd)"/alacritty ~/.config/
+ln -i -s "$(pwd)"/redshift ~/.config/
+ln -i -s "$(pwd)"/.Xmodmap ~/.Xmodmap
+ln -i -s "$(pwd)"/lynx ~/.config/
+ln -i -s "$(pwd)"/zathura ~/.config/
+ln -i -s "$(pwd)"/scripts ~/
