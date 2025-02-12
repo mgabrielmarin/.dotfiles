@@ -1,8 +1,24 @@
 #!/usr/bin/env bash
 
-session=$(find ~/ ~/fun  ~/fun/repos -mindepth 1 -maxdepth 1 -type d | fzf)
-session_name=$(basename "$session" | tr . _)
+switch_to() {
+    if [[ -z $TMUX ]]; then
+        tmux attach-session -t "$1"
+    else
+        tmux switch-client -t "$1"
+    fi
+}
 
+if [[ $# -eq 1 ]]; then
+    session=$1
+else
+    session=$(find ~/ ~/fun  ~/fun/repos -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+if [[ -z $session ]]; then
+    exit 0
+fi
+
+session_name=$(basename "$session" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
@@ -10,8 +26,8 @@ if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     exit 0
 fi
 
-if ! tmux has-session -t "$session_name" 2> /dev/null; then
+if ! tmux has-session -t="$session_name" 2> /dev/null; then
     tmux new-session -ds "$session_name" -c "$session" 
 fi
 
-tmux switch-client -t "$session_name"
+switch_to "$session_name"
