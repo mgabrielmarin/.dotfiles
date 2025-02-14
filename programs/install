@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# programs
+dot="$(pwd)"
+ps="$(find "$dot"/programs -mindepth 1 -maxdepth 1 -executable)"
+
+grep=""
+dry="0"
+
+while [[ $# -gt 0 ]]; do
+    echo "ARG: \"$1\""
+    if [[ "$1" == "--dry" ]]; then
+        dry="1"
+    else
+        grep="$1"
+    fi
+    shift
+done
+
+log() {
+    if [[ $dry == "1" ]]; then
+        echo "[DRY_RUN]: $1"
+    else
+        echo "$1"
+    fi
+}
+
+for p in $ps; do
+    if echo "$p" | grep -vq "$grep"; then
+        log "grep \"$grep\" filtered out $p"
+        continue
+    fi
+
+    log "running script: $p"
+
+    if [[ $dry == "0" ]]; then
+        $p
+    fi
+done
+
