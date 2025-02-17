@@ -53,6 +53,7 @@ export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.local/scripts"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Lynx
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
