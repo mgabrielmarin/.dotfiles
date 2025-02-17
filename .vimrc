@@ -27,6 +27,8 @@ set number
 set hlsearch
 set ruler
 set noswapfile
+set autoindent
+set smartindent
 
 " Color
 colorscheme xcodedark 
@@ -44,6 +46,7 @@ nnoremap <leader>fs :Rg<CR>
 nnoremap <leader>fh :History<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fg :GitFiles<CR>
+nnoremap <leader>fH :Helptags<CR>
 
 " Runtime path
 set rtp+=$HOME/.vim/plugged/fzf/bin/fzf
@@ -92,3 +95,6 @@ if has("persistent_undo")
     let &undodir=target_path
     set undofile
 endif
+
+" Tmux-sessionizer
+nnoremap <leader><C-f> :!tmux neww tmux-sessionizer<CR>
