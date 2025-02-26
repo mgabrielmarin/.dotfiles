@@ -42,7 +42,7 @@ if ! shopt -oq posix; then
 fi
 
 # Defaults
-export EDITOR="nvim"
+export EDITOR="vim"
 export TERMINAL="alacritty"
 export TERMINAL_PROG="alacritty"
 export BROWSER="firefox"
@@ -55,8 +55,13 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.local/scripts"
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Environment variables
+
 # Lynx
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 
 # Add fzf to bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Binds
+bind -x '"\C-f": tmux-sessionizer'

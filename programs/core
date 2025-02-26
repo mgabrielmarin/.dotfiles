@@ -3,5 +3,3 @@
 sudo apt -y update
 sudo apt -y install git ripgrep xclip tmux curl tldr jq python3-pip pipx
 
-git clone https://github.com/junegunn/fzf $HOME/fun/repos/fzf
-$HOME/fun/repos/fzf/install

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+git clone https://github.com/junegunn/fzf $HOME/fun/repos/fzf
+$HOME/fun/repos/fzf/install
