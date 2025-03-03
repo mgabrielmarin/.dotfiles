@@ -41,7 +41,7 @@
   (scroll-bar-mode -1))
                
 ;; Remove blinking cursor
-(blink-cursor-mode -1)
+(blink-cursor-mode 1)
 
 ;; Disable bell ring
 (setq ring-bell-function 'ignore)
@@ -62,11 +62,12 @@
   (set-frame-font "DejaVu Sans Mono-18")))
 (set-fontset-font "fontset-default" 'symbol "Noto Color Emoji") ;; emoji support
 
-;; mode line settigs
+;; mode line settings
 (line-number-mode t)
 (column-number-mode t)
 (size-indication-mode t)
 (global-display-line-numbers-mode t)
+(menu-bar--display-line-numbers-mode-relative)
 
 ;; Set time in status bar
 (setq display-time-day-and-date t
@@ -315,6 +316,9 @@
   (diminish 'undo-tree-mode))
 
 (use-package wgrep
+  :ensure t)
+
+(use-package bash-completion
   :ensure t)
 
 ;; config changes made through the customize UI will be stored here
