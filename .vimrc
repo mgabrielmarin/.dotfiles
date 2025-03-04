@@ -29,6 +29,8 @@ set ruler
 set noswapfile
 set autoindent
 set smartindent
+set relativenumber
+set autowrite
 
 " Color
 colorscheme xcodedark 
@@ -39,6 +41,12 @@ hi EndOfBuffer ctermbg=16 guibg=#000000
 " Remaps
 " Leader key
 let mapleader = ","
+
+" Reload config
+nnoremap <leader>so :so ~/.vimrc<CR>
+
+" Function keys
+set pastetoggle=<F3>
 
 " Fuzzy Finder
 nnoremap <leader>ff :FZF<CR>
