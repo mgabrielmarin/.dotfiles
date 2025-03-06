@@ -13,6 +13,7 @@ ln -i -s "$(pwd)"/.Xmodmap ~/.Xmodmap
 ln -i -s "$(pwd)"/lynx ~/.config/
 ln -i -s "$(pwd)"/zathura ~/.config/
 ln -i -s "$(pwd)"/scripts ~/.local/
+ln -i -s "$(pwd)"/.gitconfig ~/
 
 # require sudo
 sudo ln -sf $(pwd)/wsl/wsl.conf /etc/
