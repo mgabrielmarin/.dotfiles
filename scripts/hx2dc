@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Source: https://stackoverflow.com/questions/13280131/hexadecimal-to-decimal-in-shell-script
+# Converts hexadecimal number to decimal number
+echo $((16#$1))
+
+# Using bc
+# $ echo "ibase=16; FF" | bc
