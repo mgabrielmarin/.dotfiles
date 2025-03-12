@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+sudo apt -y update
+sudo apt -y install ruby ruby-dev rubygems-integration ruby-bundler
+sudo gem install prism -v 0.19.0 # for vim-lsp
+sudo gem install ruby-lsp
