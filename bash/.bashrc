@@ -42,10 +42,10 @@ if ! shopt -oq posix; then
 fi
 
 # Defaults
-export EDITOR="vim"
-export TERMINAL="alacritty"
-export TERMINAL_PROG="alacritty"
-export BROWSER="firefox"
+export EDITOR="vi"
+export TERMINAL="gnome-terminal"
+export TERMINAL_PROG="gnome-terminal"
+export BROWSER="chrome"
 
 # Paths
 export PATH="$PATH:$HOME/.local/bin"
