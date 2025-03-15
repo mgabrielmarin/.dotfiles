@@ -45,7 +45,7 @@ fi
 export EDITOR="vi"
 export TERMINAL="gnome-terminal"
 export TERMINAL_PROG="gnome-terminal"
-export BROWSER="chrome"
+export BROWSER="firefox"
 
 # Paths
 export PATH="$PATH:$HOME/.local/bin"
