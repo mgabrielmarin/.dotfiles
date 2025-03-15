@@ -15,6 +15,7 @@ call plug#begin()
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
   Plug 'mbbill/undotree'
+  Plug 'tpope/vim-commentary'
 call plug#end()
 
 " Basic
@@ -51,6 +52,7 @@ set pastetoggle=<F3>
 " Fuzzy Finder
 nnoremap <leader>ff :FZF<CR>
 nnoremap <leader>fs :Rg<CR>
+nnoremap <leader>fS :RG<CR>
 nnoremap <leader>fh :History<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fg :GitFiles<CR>
