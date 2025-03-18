@@ -3,4 +3,9 @@
 Programs that I use and like 
 
 ## Install
-Use `link.sh` for installation
+
+### Linux
+Use `install` for installation
+
+### MacOs
+Use `initmac` for installation

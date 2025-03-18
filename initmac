@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+if [ ! -d "~/.config" ]; then
+    mkdir ~/.config
+fi
+
+if [ ! -d "~/.local" ]; then
+    mkdir ~/.local
+fi
+
+ln -i -s "$(pwd)"/zsh/.zshrc ~/.zshrc
+ln -i -s "$(pwd)"/zsh/.zprofile ~/.zprofile
+ln -i -s "$(pwd)"/.vimrc ~/.vimrc
+ln -i -s "$(pwd)"/scripts ~/.local/

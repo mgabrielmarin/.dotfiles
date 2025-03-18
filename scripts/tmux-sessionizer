@@ -11,7 +11,7 @@ switch_to() {
 if [[ $# -eq 1 ]]; then
     session=$1
 else
-    session=$(find ~/ ~/fun  ~/fun/repos -mindepth 1 -maxdepth 1 -type d | fzf)
+    session=$(find $HOME $HOME/fun  $HOME/fun/repos -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $session ]]; then
