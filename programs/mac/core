@@ -1,3 +1,3 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash 
 
-brew install fzf tmux vim
+brew install tmux vim go fzf
