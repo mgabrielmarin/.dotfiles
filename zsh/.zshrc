@@ -4,6 +4,10 @@
 # Set vim mode
 set -o vi
 
+# Completion
+autoload -U compinit
+compinit -D
+
 # Defaults
 EDITOR='vi'
 
