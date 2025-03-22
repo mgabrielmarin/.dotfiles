@@ -127,8 +127,8 @@
 ;; Install use package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
-
 (require 'use-package)
+(setq use-package-always-ensure t)
 (setq use-package-verbose t)
 
 ;; Packages
@@ -136,8 +136,7 @@
   :config
   (show-paren-mode +1))
 
-(use-package magit
-  :ensure t)
+(use-package magit)
 
 ;; (use-package dracula-theme
 ;;   :ensure t
@@ -147,14 +146,12 @@
 ;;   (set-face-attribute 'line-number nil :background "black"))
 
 (use-package catppuccin-theme
-  :ensure t
   :config
   (setq catppuccin-flavor 'mocha)
   (load-theme 'catppuccin t)
   (set-face-attribute 'default nil :background "black"))
 
 (use-package diminish
-  :ensure t
   :config
   (diminish 'abbrev-mode)
   (diminish 'flyspell-mode)
@@ -162,8 +159,7 @@
   (diminish 'eldoc-mode))
 
 (use-package paredit
-  :ensure t
-  :config
+    :config
   (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
   (add-hook 'lisp-interaction-mode-hook #'paredit-mode)
   (add-hook 'lisp-mode-hook #'paredit-mode)
@@ -171,29 +167,24 @@
   (diminish 'paredit-mode "()"))
 
 (use-package exec-path-from-shell
-  :ensure t
   :config
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize)))
 
 (use-package pdf-tools
-  :ensure t
   :config
   (pdf-tools-install)
   (setq pdf-view-midnight-colors '("#ffffff" . "#000000"))
   (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1))))
 
-(use-package rainbow-delimiters
-  :ensure t)
+(use-package rainbow-delimiters)
 
 (use-package rainbow-mode
-  :ensure t
   :config
   (add-hook 'prog-mode-hook #'rainbow-mode)
   (diminish 'rainbow-mode))
 
 (use-package clojure-mode
-  :ensure t
   :config
   (define-clojure-indent
     (returning 1)
@@ -204,93 +195,70 @@
   (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode))
 
 (use-package inf-clojure
-  :ensure t
   :config
   (add-hook 'inf-clojure-mode-hook #'paredit-mode)
   (add-hook 'inf-clojure-mode-hook #'rainbow-delimiters-mode))
 
-(use-package lisp-mode
-  :config
-  (add-hook 'lisp-mode-hook #'paredit-mode)
-  (add-hook 'lisp-mode-hook #'rainbow-delimiters-mode))
-
 (use-package cider
-  :ensure t
   :config
   (setq nrepl-log-messages t)
   (add-hook 'cider-repl-mode-hook #'paredit-mode)
   (add-hook 'cider-repl-mode-hook #'rainbow-delimiters-mode))
 
 (use-package slime
-  :ensure t
   :config
   (setq inferior-lisp-program "sbcl")
   (add-hook 'lisp-mode-hook #'paredit-mode)
   (add-hook 'lisp-mode-hook #'rainbow-delimiters-mode))
 
-(use-package elixir-mode
-  :ensure t
-  :config
-  (add-hook 'elixir-mode #'subword-mode))
-
-(use-package erlang
-  :ensure t)
-
-(use-package go-mode
-  :ensure t)
-
-(use-package markdown-mode
-  :ensure t)
+(use-package erlang)
+(use-package elixir-mode)
+(use-package go-mode)
+(use-package markdown-mode)
 
 (use-package lsp-mode
-  :ensure t
   :init (setq lsp-keymap-prefix "C-c l")
   :commands lsp)
 
-(use-package yasnippet
-  :ensure t
-  :config
-  (yas-global-mode))
+;; (use-package company
+;;   :config
+;;   (global-company-mode))
 
-(use-package company
-  :ensure t
-  :config
-  (global-company-mode))
+(use-package corfu
+  ;; Replaces company
+  ;; Buffer completion
+  :custom
+  (corfu-cycle t)
+  (corfu-auto t)
+  :init
+  (global-corfu-mode))
 
+;;(use-package ivy)
 
-(use-package tree-sitter
-  :ensure t
-  :config
-  (add-hook 'after-init-hook #'global-tree-sitter-mode))
+(use-package vertico
+  ;; Replaces ivy
+  ;; Minibuffer completion
+  :init
+  (vertico-mode))
 
-(use-package ivy
-  :ensure t)
-
-(use-package elfeed
-  :ensure t)
-
+(use-package elfeed)
 (use-package  elfeed-org
-  :ensure t
   :config
   (setq rmh-elfeed-org-files
         (list "~/.emacs.d/elfeed.org")))
 
 (use-package emms
-  :ensure t
   :config
   (emms-all)
   (emms-default-players)
   :bind (("C-c C-r" . emms-toggle-repeat-track)))
 
 (use-package org-drill
-  :ensure t
   :config
   (setq org-drill-learn-fraction 0.8))
-(use-package org-drill-table
-  :ensure t)
+(use-package org-drill-table)
 
 (use-package undo-tree
-  :ensure t
   :config
   ;; autosave the undo-tree history
   (setq undo-tree-history-directory-alist
@@ -299,11 +267,8 @@
   (global-undo-tree-mode +1)
   (diminish 'undo-tree-mode))
 
-(use-package wgrep
-  :ensure t)
-
-(use-package bash-completion
-  :ensure t)
+(use-package wgrep)
+(use-package bash-completion)
 
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
