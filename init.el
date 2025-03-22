@@ -1,8 +1,8 @@
 ;;; init.el --- Gabriel's Emacs configuration
 ;;
-;; Copyright © 2020-2024 Gabriel Marin
+;; Copyright © 2020-2025 Gabriel Marin
 ;;
-;; Author: Gabriel Marin <marin.gabriel@protonmail.com>
+;; Author: Gabriel Marin <gbrlmarn@gmail.com>
 ;; URL: https://github.com/gbrlmarn/.emacs.d
 ;;
 ;;; Commentary:
@@ -54,13 +54,10 @@
 
 ;; Fonts
 (cond
- ((find-font (font-spec :name "Fira Code"))
-  (set-frame-font "Fira Code-18"))
- ((find-font (font-spec :name "Cascadia Code"))
-  (set-frame-font "Cascadia Code-18"))
- ((find-font (font-spec :name "DejaVu Sans Mono"))
-  (set-frame-font "DejaVu Sans Mono-18")))
-(set-fontset-font "fontset-default" 'symbol "Noto Color Emoji") ;; emoji support
+ ((find-font (font-spec :name "Monaco"))
+  (set-frame-font "Monaco 18"))
+ ((find-font (font-spec :name "Anonymous Pro"))
+  (set-frame-font "Anonymous Pro 18")))
 
 ;; mode line settings
 (line-number-mode t)
@@ -123,15 +120,7 @@
     (message "Microsoft Windows")))
  ((string-equal system-type "darwin") ; Mac OS X
   (progn
-    ;; (setq mac-right-command-modifier      'super
-    ;;       ns-right-command-modifier       'super
-    ;;       mac-option-modifier             'meta
-    ;;       ns-option-modifier              'meta
-    ;;       mac-right-option-modifier       'none
-    ;;       ns-right-option-modifier        'none
-    ;;       )
-    (setq mac-right-option-modifier 'meta
-          ns-right-option-modifier 'meta)
+       (setq mac-right-command-modifier 'meta)
     (message "MacOS")))
  ((string-equal system-type "gnu/linux") ; linux
   (progn
@@ -205,7 +194,6 @@
     (returning 1)
     (testing-dynamic 1)
     (testing-print 1))
-  
   (add-hook 'clojure-mode-hook #'paredit-mode)
   (add-hook 'clojure-mode-hook #'subword-mode)
   (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode))
@@ -274,22 +262,13 @@
   :ensure t)
 
 (use-package elfeed
-  :ensure t
-  :config
-  (elfeed-org))
+  :ensure t)
+
 (use-package  elfeed-org
   :ensure t
   :config
   (setq rmh-elfeed-org-files
         (list "~/.emacs.d/elfeed.org")))
-
-(use-package crux
-  :ensure t
-  :bind (("C-c o" . crux-open-with)
-         ("C-c e" . crux-eval-and-replace)
-         ("C-c w" . crux-swap-windows)
-         ("C-c S" . crux-find-shell-init-file)
-         ("C-c s" . crux-ispell-word-then-abbrev)))
 
 (use-package emms
   :ensure t
