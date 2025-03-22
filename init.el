@@ -116,15 +116,13 @@
 ;; check OS type
 (cond
  ((string-equal system-type "windows-nt") ; Microsoft Windows
-  (progn
-    (message "Microsoft Windows")))
+  (progn (message "Microsoft Windows")))
  ((string-equal system-type "darwin") ; Mac OS X
-  (progn
-       (setq mac-right-command-modifier 'meta)
-    (message "MacOS")))
+  (progn (setq mac-right-command-modifier 'meta)
+         (setq mac-command-modifier 'meta)
+         (message "MacOS")))
  ((string-equal system-type "gnu/linux") ; linux
-  (progn
-    (message "Linux"))))
+  (progn (message "Linux"))))
 
 ;; Install use package
 (unless (package-installed-p 'use-package)
