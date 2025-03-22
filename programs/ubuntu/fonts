@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Font for coding, similar to Monaco from Apple
+sudo apt install -y fonts-anonymous-pro
