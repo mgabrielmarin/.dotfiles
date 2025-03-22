@@ -62,9 +62,9 @@
 ;; mode line settings
 (line-number-mode t)
 (column-number-mode t)
-(size-indication-mode t)
-(global-display-line-numbers-mode t)
-(menu-bar--display-line-numbers-mode-relative)
+;;(size-indication-mode t)
+;;(global-display-line-numbers-mode )
+;;(menu-bar--display-line-numbers-mode-relative)
 
 ;; Set time in status bar
 (setq display-time-day-and-date t
@@ -139,12 +139,19 @@
 (use-package magit
   :ensure t)
 
-(use-package dracula-theme
+;; (use-package dracula-theme
+;;   :ensure t
+;;   :config
+;;   (load-theme 'dracula t)
+;;   (set-background-color "black")
+;;   (set-face-attribute 'line-number nil :background "black"))
+
+(use-package catppuccin-theme
   :ensure t
   :config
-  (load-theme 'dracula t)
-  (set-background-color "black")
-  (set-face-attribute 'line-number nil :background "black"))
+  (setq catppuccin-flavor 'mocha)
+  (load-theme 'catppuccin t)
+  (set-face-attribute 'default nil :background "black"))
 
 (use-package diminish
   :ensure t
