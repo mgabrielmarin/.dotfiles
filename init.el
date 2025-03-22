@@ -216,9 +216,12 @@
 (use-package go-mode)
 (use-package markdown-mode)
 
-(use-package lsp-mode
-  :init (setq lsp-keymap-prefix "C-c l")
-  :commands lsp)
+;; (use-package lsp-mode
+;;   :init (setq lsp-keymap-prefix "C-c l")
+;;   :commands lsp)
+
+;; replaces lsp-mode
+(use-package eglot)
 
 ;; (use-package company
 ;;   :config
@@ -232,6 +235,14 @@
   (corfu-auto t)
   :init
   (global-corfu-mode))
+
+(use-package orderless
+  :init
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
+
+
 
 ;;(use-package ivy)
 
