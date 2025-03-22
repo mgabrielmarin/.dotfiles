@@ -56,8 +56,13 @@
 (cond
  ((find-font (font-spec :name "Monaco"))
   (set-frame-font "Monaco 18"))
- ((find-font (font-spec :name "Anonymous Pro"))
-  (set-frame-font "Anonymous Pro 18")))
+ ((find-font (font-spec :name "AnonymousPro"))
+  (set-frame-font "AnonymousPro 18"))
+ ((find-font (font-spec :name "NotoSansMono"))
+  (set-frame-font "NotoSansMono 18"))
+  ((find-font (font-spec :name "UbuntuMono"))
+  (set-frame-font "UbuntuMono 18"))
+ )
 
 ;; mode line settings
 (line-number-mode t)
