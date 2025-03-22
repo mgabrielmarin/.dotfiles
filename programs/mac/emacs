@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+brew install --cask emacs
+
+# To start emacs now and restart at login:
+# brew services start emacs
+# Or, if you don't want/need a background service you can just run:
+# /opt/homebrew/opt/emacs/bin/emacs --fg-daemon

@@ -17,6 +17,9 @@ force_color_prompt=yes
 # Paths
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/scripts"
+export PATH="$PATH:$HOME/go/bin"
+
+# Aliases
 
 # Binds
 bindkey -s ^f "tmux-sessionizer\n"
