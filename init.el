@@ -259,9 +259,11 @@
 
 (use-package elfeed)
 (use-package  elfeed-org
-  :config
+  :init
   (setq rmh-elfeed-org-files
-        (list "~/.emacs.d/elfeed.org")))
+        (list "~/.emacs.d/elfeed.org"))
+  :config
+  (elfeed-org))
 
 (use-package emms
   :config

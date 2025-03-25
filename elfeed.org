@@ -9,7 +9,8 @@
 *** http://trevorjim.com/feed.xml
 *** https://andreyor.st/feed.xml
 *** https://project-mage.org/rss.xml
-*** https://lmno.lol/alvaro/feed
+*** https://lmno.lol/alvaro/rss.xml
+*** https://joshblais.com/index.xml
 ** Lisp :lisp:
 *** Clojure :clojure:
 **** https://practical.li/blog/feed.xml
