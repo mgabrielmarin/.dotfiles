@@ -22,6 +22,10 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
+;; Username and Email
+(setq user-full-name "Gabriel Marin"
+      user-mail-address "gbrlmarn@gmail.com")
+
 ;; Always load newest byte code
 (setq load-prefer-newer t)
 
@@ -55,13 +59,13 @@
 ;; Fonts
 (cond
  ((find-font (font-spec :name "Monaco"))
-  (set-frame-font "Monaco 18"))
+  (set-frame-font "Monaco 20"))
  ((find-font (font-spec :name "AnonymousPro"))
-  (set-frame-font "AnonymousPro 18"))
+  (set-frame-font "AnonymousPro 20"))
  ((find-font (font-spec :name "NotoSansMono"))
-  (set-frame-font "NotoSansMono 18"))
+  (set-frame-font "NotoSansMono 20"))
   ((find-font (font-spec :name "UbuntuMono"))
-  (set-frame-font "UbuntuMono 18"))
+  (set-frame-font "UbuntuMono 20"))
  )
 
 ;; mode line settings
