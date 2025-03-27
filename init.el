@@ -72,8 +72,8 @@
 (line-number-mode t)
 (column-number-mode t)
 ;;(size-indication-mode t)
-;;(global-display-line-numbers-mode )
-;;(menu-bar--display-line-numbers-mode-relative)
+(global-display-line-numbers-mode)
+(menu-bar--display-line-numbers-mode-relative)
 
 ;; Set time in status bar
 (setq display-time-day-and-date t
@@ -158,7 +158,8 @@
   :config
   (setq catppuccin-flavor 'mocha)
   (load-theme 'catppuccin t)
-  (set-face-attribute 'default nil :background "black"))
+  (set-face-attribute 'default nil :background "black")
+  (set-face-attribute 'line-number nil :background "black"))
 
 (use-package diminish
   :config
@@ -290,7 +291,9 @@
   (diminish 'undo-tree-mode))
 
 (use-package wgrep)
-(use-package bash-completion)
+(use-package bash-completion
+  :config
+  (bash-completion-setup))
 
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
