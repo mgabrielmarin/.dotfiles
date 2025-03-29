@@ -9,7 +9,11 @@ autoload -U compinit
 compinit -D
 
 # Defaults
-EDITOR='vi'
+if which nvim >/dev/null; then
+    EDITOR='nvim'
+else
+    EDITOR='vi'
+fi
 
 # Options
 force_color_prompt=yes
