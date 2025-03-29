@@ -12,3 +12,4 @@ ln -i -s "$(pwd)"/zsh/.zshrc ~/.zshrc
 ln -i -s "$(pwd)"/zsh/.zprofile ~/.zprofile
 ln -i -s "$(pwd)"/.vimrc ~/.vimrc
 ln -i -s "$(pwd)"/scripts ~/.local/
+ln -i -s "$(pwd)"/nvim ~/.config/
