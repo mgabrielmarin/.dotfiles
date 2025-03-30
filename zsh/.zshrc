@@ -22,6 +22,12 @@ force_color_prompt=yes
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/scripts"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.dotnet/tools"
+
+# Env Vars
+# export DOTNET_ROOT="/opt/homebrew/Cellar/dotnet/9.0.3/libexec"
+export DOTNET_ROOT="/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec"
+
 
 # Aliases
 

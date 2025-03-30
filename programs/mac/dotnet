@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# dotnet@8 is used for 'csharp-ls' with 'coc.nvim'
+brew install dotnet dotnet@8
