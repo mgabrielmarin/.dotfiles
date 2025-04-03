@@ -1,0 +1,45 @@
+feeds:
+  - url: https://blog.rust-lang.org/feed.xml
+    name: articles
+  - url: https://news.ycombinator.com/rss
+    name: articles
+  - url: https://hnrss.org/newest
+    name: articles
+  - url: https://hnrss.org/newcomments
+    name: articles
+  - url: https://suckless.org/atom.xml
+    name: articles
+  - url: https://lukesmith.xyz/index.xml
+    name: articles
+  - url: https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&isLocal=true
+    name: articles
+  - url: https://www.libhunt.com/feed
+    name: articles
+
+  - url: https://batsov.com/atom.xml
+    name: lisp
+  - url: http://community.schemewiki.org/?c=rss
+    name: lisp
+
+  - url: https://archlinux.org/feeds/news/
+    name: linux
+  - url: https://www.freebsd.org/news/feed.xml
+    name: linux
+  - url: https://people.kernel.org/linusw/feed
+    name: linux
+
+  - url: https://www.g4media.ro/feed
+    name: news
+  - url: https://www.jurnalul.ro/rss
+    name: news
+  - url: https://www.libertatea.ro/feed
+    name: news
+  - url: https://www.gandul.ro/feed
+    name: news
+  - url: https://www.hotnews.ro/rss
+    name: news
+
+  - url: https://www.youtube.com/feeds/videos.xml?playlist_id=PLrAXtmErZgOdP_8GztsuKi9nrraNbKKp4
+  - url: https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
+    name: vids
+

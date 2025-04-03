@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+brew install nom
+nom --config-path=$HOME/.config/nom/config.yml

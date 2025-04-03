@@ -16,3 +16,4 @@ ln -i -s "$(pwd)"/nvim ~/.config/
 ln -i -s "$(pwd)"/gh ~/.config/
 ln -i -s "$(pwd)"/lynx ~/.config/
 ln -i -s "$(pwd)"/newsboat ~/.config/
+ln -i -s "$(pwd)"/nom ~/.config/

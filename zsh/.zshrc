@@ -26,6 +26,7 @@ export DOTNET_ROOT="/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec"
 
 
 # Aliases
+alias nom="nom --config-path=$HOME/.config/nom/config.yml"
 
 # Binds
 bindkey -s ^f "tmux-sessionizer\n"
