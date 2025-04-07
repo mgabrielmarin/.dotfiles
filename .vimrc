@@ -12,6 +12,7 @@ call plug#begin()
   Plug 'arzg/vim-colors-xcode'
   Plug 'mbbill/undotree'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'dense-analysis/ale'
   Plug 'vim-airline/vim-airline'
@@ -33,6 +34,7 @@ set relativenumber
 set autowrite
 
 " Color
+set termguicolors
 colorscheme xcodedark 
 hi Normal ctermbg=16 guibg=#000000
 hi LineNr ctermbg=16 guibg=#000000
