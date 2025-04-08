@@ -15,9 +15,12 @@
 
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
+
 ;; keep the installed packages in .emacs.d
 (setq package-user-dir (expand-file-name "elpa" user-emacs-directory))
-(package-initialize)
+(when (< emacs-major-version 27)
+  (package-initialize))
+
 ;; update the package metadata
 (unless package-archive-contents
   (package-refresh-contents))
@@ -45,7 +48,7 @@
   (scroll-bar-mode -1))
                
 ;; Remove blinking cursor
-(blink-cursor-mode 1)
+;; (blink-cursor-mode 0)
 
 ;; Disable bell ring
 (setq ring-bell-function 'ignore)
@@ -73,7 +76,7 @@
 (column-number-mode t)
 ;;(size-indication-mode t)
 (global-display-line-numbers-mode)
-(menu-bar--display-line-numbers-mode-relative)
+;;(menu-bar--display-line-numbers-mode-relative)
 
 ;; Set time in status bar
 (setq display-time-day-and-date t
