@@ -76,7 +76,7 @@
 (column-number-mode t)
 ;;(size-indication-mode t)
 (global-display-line-numbers-mode)
-;;(menu-bar--display-line-numbers-mode-relative)
+(menu-bar--display-line-numbers-mode-relative)
 
 ;; Set time in status bar
 (setq display-time-day-and-date t

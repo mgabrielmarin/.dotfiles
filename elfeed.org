@@ -11,6 +11,7 @@
 *** https://project-mage.org/rss.xml
 *** https://lmno.lol/alvaro/rss.xml
 *** https://joshblais.com/index.xml
+*** https://batsov.com/atom.xml
 ** Lisp :lisp:
 *** Clojure :clojure:
 **** https://practical.li/blog/feed.xml
