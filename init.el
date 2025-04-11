@@ -48,7 +48,7 @@
   (scroll-bar-mode -1))
                
 ;; Remove blinking cursor
-;; (blink-cursor-mode 0)
+(blink-cursor-mode 0)
 
 ;; Disable bell ring
 (setq ring-bell-function 'ignore)
