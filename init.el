@@ -151,10 +151,9 @@
 (use-package magit)
 
 ;; (use-package dracula-theme
-;;   :ensure t
 ;;   :config
 ;;   (load-theme 'dracula t)
-;;   (set-background-color "black")
+;;   (set-face-attribute 'default nil :background "black")
 ;;   (set-face-attribute 'line-number nil :background "black"))
 
 (use-package catppuccin-theme
@@ -234,7 +233,12 @@
 ;;   :commands lsp)
 
 ;; replaces lsp-mode
-(use-package eglot)
+(use-package eglot
+  :config
+  ;; set sdk path when using mac
+  (if (string-equal system-type "darwin")
+      (setenv "DOTNET_ROOT"
+              "/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec")))
 
 ;; (use-package company
 ;;   :config
@@ -254,8 +258,6 @@
   (setq completion-styles '(orderless basic)
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
-
-
 
 ;;(use-package ivy)
 
