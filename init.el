@@ -69,7 +69,7 @@
   (set-frame-font "NotoSansMono 20"))
   ((find-font (font-spec :name "UbuntuMono"))
   (set-frame-font "UbuntuMono 20"))
- )
+  )
 
 ;; mode line settings
 (line-number-mode t)
@@ -161,7 +161,8 @@
   (setq catppuccin-flavor 'mocha)
   (load-theme 'catppuccin t)
   (set-face-attribute 'default nil :background "black")
-  (set-face-attribute 'line-number nil :background "black"))
+  (set-face-attribute 'line-number nil :background "black")
+  )
 
 (use-package diminish
   :config
@@ -226,6 +227,7 @@
 (use-package erlang)
 (use-package elixir-mode)
 (use-package go-mode)
+(use-package typescript-mode)
 (use-package markdown-mode)
 
 ;; (use-package lsp-mode
