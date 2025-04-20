@@ -302,6 +302,11 @@
   :config
   (bash-completion-setup))
 
+(use-package pinentry
+  ;; :defer nil ;; NOTE: not sure if this is needed
+  :config
+  (pinentry-start))
+
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
