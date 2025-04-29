@@ -9,4 +9,3 @@ Use `install` for installation
 
 ### MacOs
 Use `initmac` for installation
-
