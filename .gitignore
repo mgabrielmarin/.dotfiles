@@ -1,4 +1,4 @@
-# other stuff
+# general
 *.o
 *~
 .newsboat/cache.db
@@ -10,3 +10,4 @@ __pycache__
 # emacs
 .emacs.d/*
 !.emacs.d/init.el
+!.emacs.d/elfeed.org
