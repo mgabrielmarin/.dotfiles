@@ -28,9 +28,24 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 
 # Aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+
+# ls
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# dir
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+# diff
+alias diff='diff --color=auto'
 
 # Completion
 if ! shopt -oq posix; then
