@@ -1,9 +1,11 @@
-# My configuration
-
+# Dotfiles
 Programs that I use and like
 
-## Install
+## Dependencies
+- git
+- stow
 
+## Install
 ### GNU Stow
 `git clone https://github.com/gbrlmarn/.dotfiles.git ~/.dotfiles`  
 `stow .`
