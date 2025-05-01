@@ -1,13 +1,16 @@
-# general
-*.o
-*~
-.newsboat/cache.db
-nvim/node_modules/
-nvim/*.json
-nvim/plugin/
-__pycache__
-
 # emacs
 .emacs.d/*
 !.emacs.d/init.el
 !.emacs.d/elfeed.org
+
+# newsboat
+.config/.newsboat/cache.db
+
+# nvim
+.config/nvim/node_modules/
+.config/nvim/*.json
+.config/nvim/plugin/
+
+# python
+__pycache__
+
