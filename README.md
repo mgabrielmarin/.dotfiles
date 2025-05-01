@@ -4,8 +4,6 @@ Programs that I use and like
 
 ## Install
 
-### Linux
-Use `install` for installation
-
-### MacOs
-Use `initmac` for installation
+### GNU Stow
+`git clone https://github.com/gbrlmarn/.dotfiles.git ~/.dotfiles`  
+`stow .`
