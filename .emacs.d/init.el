@@ -43,6 +43,11 @@
 (show-paren-mode 1)
 (pixel-scroll-precision-mode 1)
 
+;; default buffer completion
+(if (> emacs-major-version 27)
+    (fido-vertical-mode)
+  (fido-mode))
+
 ;; default vars
 (setq inhibit-startup-screen 1)
 (setq ring-bell-function 'ignore)
@@ -210,42 +215,6 @@
 (use-package lsp-mode
   :init (setq lsp-keymap-prefix "C-c l")
   :commands lsp)
-
-;; Default buffer completion
-(if (> emacs-major-version 27)
-    (fido-vertical-mode)
-  (fido-mode))
-
-;; (use-package eglot
-;;   ;; replaces lsp-mode
-;;   :config
-;;   ;; set sdk path when using mac
-;;   (if (string-equal system-type "darwin")
-;;       (setenv "DOTNET_ROOT"
-;;               "/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec")))
-
-;; (use-package corfu
-;;   ;; Replaces company
-;;   ;; Buffer completion
-;;   :custom
-;;   (corfu-cycle t)
-;;   (corfu-auto t)
-;;   :init
-;;   (global-corfu-mode))
-
-;; (use-package orderless
-;;   :init
-;;   (setq completion-styles '(orderless basic)
-;;         completion-category-defaults nil
-;;         completion-category-overrides '((file (styles partial-completion)))))
-
-;;(use-package ivy)
-
-;; (use-package vertico
-;;   ;; Replaces ivy
-;;   ;; Minibuffer completion
-;;   :init
-;;   (vertico-mode))
 
 (use-package elfeed)
 (use-package elfeed-org
