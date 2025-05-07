@@ -67,9 +67,9 @@
   (set-frame-font "AnonymousPro 20"))
  ((find-font (font-spec :name "NotoSansMono"))
   (set-frame-font "NotoSansMono 20"))
-  ((find-font (font-spec :name "UbuntuMono"))
+ ((find-font (font-spec :name "UbuntuMono"))
   (set-frame-font "UbuntuMono 20"))
-  )
+ )
 
 ;; mode line settings
 (line-number-mode t)
@@ -111,6 +111,7 @@
 ;; revert buffers automatically when underlying files are changed externaly
 (global-auto-revert-mode t)
 
+;; use utf-8
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
@@ -230,47 +231,52 @@
 (use-package typescript-mode)
 (use-package markdown-mode)
 
-;; (use-package lsp-mode
-;;   :init (setq lsp-keymap-prefix "C-c l")
-;;   :commands lsp)
-
-;; replaces lsp-mode
-(use-package eglot
+(use-package company
   :config
-  ;; set sdk path when using mac
-  (if (string-equal system-type "darwin")
-      (setenv "DOTNET_ROOT"
-              "/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec")))
+  (global-company-mode))
 
-;; (use-package company
+(use-package lsp-mode
+  :init (setq lsp-keymap-prefix "C-c l")
+  :commands lsp)
+
+;; Default buffer completion
+(if (> emacs-major-version 27)
+    (fido-vertical-mode)
+  (fido-mode))
+
+;; (use-package eglot
+;;   ;; replaces lsp-mode
 ;;   :config
-;;   (global-company-mode))
+;;   ;; set sdk path when using mac
+;;   (if (string-equal system-type "darwin")
+;;       (setenv "DOTNET_ROOT"
+;;               "/opt/homebrew/Cellar/dotnet@8/8.0.14_1/libexec")))
 
-(use-package corfu
-  ;; Replaces company
-  ;; Buffer completion
-  :custom
-  (corfu-cycle t)
-  (corfu-auto t)
-  :init
-  (global-corfu-mode))
+;; (use-package corfu
+;;   ;; Replaces company
+;;   ;; Buffer completion
+;;   :custom
+;;   (corfu-cycle t)
+;;   (corfu-auto t)
+;;   :init
+;;   (global-corfu-mode))
 
-(use-package orderless
-  :init
-  (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+;; (use-package orderless
+;;   :init
+;;   (setq completion-styles '(orderless basic)
+;;         completion-category-defaults nil
+;;         completion-category-overrides '((file (styles partial-completion)))))
 
 ;;(use-package ivy)
 
-(use-package vertico
-  ;; Replaces ivy
-  ;; Minibuffer completion
-  :init
-  (vertico-mode))
+;; (use-package vertico
+;;   ;; Replaces ivy
+;;   ;; Minibuffer completion
+;;   :init
+;;   (vertico-mode))
 
 (use-package elfeed)
-(use-package  elfeed-org
+(use-package elfeed-org
   :init
   (setq rmh-elfeed-org-files
         (list "~/.emacs.d/elfeed.org"))
@@ -298,6 +304,7 @@
   (diminish 'undo-tree-mode))
 
 (use-package wgrep)
+
 (use-package bash-completion
   :config
   (bash-completion-setup))
@@ -306,6 +313,10 @@
   ;; :defer nil ;; NOTE: not sure if this is needed
   :config
   (pinentry-start))
+
+(use-package geiser
+  :config
+  (use-package geiser-guile))
 
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
