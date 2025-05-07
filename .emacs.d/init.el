@@ -14,7 +14,7 @@
 (require 'package)
 
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/") t)
+	         '("melpa" . "https://melpa.org/packages/") t)
 
 ;; keep the installed packages in .emacs.d
 (setq package-user-dir (expand-file-name "elpa" user-emacs-directory))
@@ -35,31 +35,32 @@
 ;; quit Emacs directly even if there are running processes
 (setq confirm-kill-processes nil)
 
-;; Remove top toolbar
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-
-;; Remove menu bar
-(when (fboundp 'menu-bar-mode)
-  (menu-bar-mode -1))
-
-;; Remove scroll bar
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
-               
-;; Remove blinking cursor
+;; default modes
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
 (blink-cursor-mode 0)
+(show-paren-mode 1)
+(pixel-scroll-precision-mode 1)
 
-;; Disable bell ring
+;; default vars
+(setq inhibit-startup-screen 1)
 (setq ring-bell-function 'ignore)
 
-;; Disable startup screen
-(setq inhibit-startup-screen t)
+;; mode line settings
+(line-number-mode 1)
+(column-number-mode 1)
+;;(size-indication-mode t)
 
-(when (fboundp 'pixel-scroll-precision-mode)
-  (pixel-scroll-precision-mode t))
+;; show time in mode line
+(setq display-time-day-and-date t
+      display-time-24hr-format t
+      display-time-default-load-average nil
+      display-time-interval 60
+      display-time-format "%H:%M %d.%m.%Y")
+(display-time-mode t)
 
-;; Fonts
+;; fonts
 (cond
  ((find-font (font-spec :name "Monaco"))
   (set-frame-font "Monaco 20"))
@@ -71,20 +72,9 @@
   (set-frame-font "UbuntuMono 20"))
  )
 
-;; mode line settings
-(line-number-mode t)
-(column-number-mode t)
-;;(size-indication-mode t)
+;; display line numbers
 (global-display-line-numbers-mode)
 (menu-bar--display-line-numbers-mode-relative)
-
-;; Set time in status bar
-(setq display-time-day-and-date t
-      display-time-24hr-format t
-      display-time-default-load-average nil
-      display-time-interval 60
-      display-time-format " %a %b %e, %H:%M ")
-(display-time-mode t)
 
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -145,10 +135,6 @@
 (setq use-package-verbose t)
 
 ;; Packages
-(use-package paren
-  :config
-  (show-paren-mode +1))
-
 (use-package magit)
 
 (use-package dracula-theme
@@ -182,14 +168,14 @@
   :config
   (pdf-tools-install)
   (setq pdf-view-midnight-colors '("#ffffff" . "#000000"))
-  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1))))
+  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode 0))))
 
 (use-package clojure-mode
   :config
   (define-clojure-indent
-    (returning 1)
-    (testing-dynamic 1)
-    (testing-print 1))
+   (returning 1)
+   (testing-dynamic 1)
+   (testing-print 1))
   (add-hook 'clojure-mode-hook #'paredit-mode)
   (add-hook 'clojure-mode-hook #'subword-mode)
   (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode))
