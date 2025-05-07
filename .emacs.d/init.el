@@ -280,14 +280,6 @@
   (setq org-drill-learn-fraction 0.8))
 (use-package org-drill-table)
 
-(use-package undo-tree
-  :config
-  ;; autosave the undo-tree history
-  (setq undo-tree-history-directory-alist
-        `((".*" . ,temporary-file-directory)))
-  (setq undo-tree-auto-save-history t)
-  (global-undo-tree-mode +1))
-
 (use-package wgrep)
 
 (use-package bash-completion
