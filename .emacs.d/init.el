@@ -151,19 +151,19 @@
 
 (use-package magit)
 
-;; (use-package dracula-theme
-;;   :config
-;;   (load-theme 'dracula t)
-;;   (set-face-attribute 'default nil :background "black")
-;;   (set-face-attribute 'line-number nil :background "black"))
-
-(use-package catppuccin-theme
+(use-package dracula-theme
   :config
-  (setq catppuccin-flavor 'mocha)
-  (load-theme 'catppuccin t)
+  (load-theme 'dracula t)
   (set-face-attribute 'default nil :background "black")
-  (set-face-attribute 'line-number nil :background "black")
-  )
+  (set-face-attribute 'line-number nil :background "black"))
+
+;; (use-package catppuccin-theme
+;;   :config
+;;   (setq catppuccin-flavor 'mocha)
+;;   (load-theme 'catppuccin t)
+;;   (set-face-attribute 'default nil :background "black")
+;;   (set-face-attribute 'line-number nil :background "black")
+;;   )
 
 (use-package diminish
   :config
@@ -173,10 +173,11 @@
   (diminish 'eldoc-mode))
 
 (use-package paredit
-    :config
+  :config
   (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
   (add-hook 'lisp-interaction-mode-hook #'paredit-mode)
   (add-hook 'lisp-mode-hook #'paredit-mode)
+  (add-hook 'scheme-mode-hook #'paredit-mode)
   (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
   (diminish 'paredit-mode "()"))
 
