@@ -165,21 +165,13 @@
 ;;   (set-face-attribute 'line-number nil :background "black")
 ;;   )
 
-(use-package diminish
-  :config
-  (diminish 'abbrev-mode)
-  (diminish 'flyspell-mode)
-  (diminish 'flyspell-prog-mode)
-  (diminish 'eldoc-mode))
-
 (use-package paredit
   :config
   (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
   (add-hook 'lisp-interaction-mode-hook #'paredit-mode)
   (add-hook 'lisp-mode-hook #'paredit-mode)
   (add-hook 'scheme-mode-hook #'paredit-mode)
-  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
-  (diminish 'paredit-mode "()"))
+  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode))
 
 (use-package exec-path-from-shell
   :config
@@ -191,13 +183,6 @@
   (pdf-tools-install)
   (setq pdf-view-midnight-colors '("#ffffff" . "#000000"))
   (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1))))
-
-(use-package rainbow-delimiters)
-
-(use-package rainbow-mode
-  :config
-  (add-hook 'prog-mode-hook #'rainbow-mode)
-  (diminish 'rainbow-mode))
 
 (use-package clojure-mode
   :config
@@ -301,8 +286,7 @@
   (setq undo-tree-history-directory-alist
         `((".*" . ,temporary-file-directory)))
   (setq undo-tree-auto-save-history t)
-  (global-undo-tree-mode +1)
-  (diminish 'undo-tree-mode))
+  (global-undo-tree-mode +1))
 
 (use-package wgrep)
 
