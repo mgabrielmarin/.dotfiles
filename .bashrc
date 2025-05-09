@@ -9,7 +9,7 @@
 PS1='[\u@\h \W]\$ '
 
 # vi mode
-set -o vi
+# set -o vi
 
 # History
 # don't put duplicate lines or lines starting with space in the history.

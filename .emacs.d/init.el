@@ -40,8 +40,8 @@
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 (blink-cursor-mode 0)
-(show-paren-mode 1)
-(pixel-scroll-precision-mode 1)
+(show-paren-mode t)
+(pixel-scroll-precision-mode t)
 
 ;; default buffer completion
 (if (> emacs-major-version 27)
@@ -49,12 +49,12 @@
   (fido-mode))
 
 ;; default vars
-(setq inhibit-startup-screen 1)
+(setq inhibit-startup-screen t)
 (setq ring-bell-function 'ignore)
 
 ;; mode line settings
-(line-number-mode 1)
-(column-number-mode 1)
+(line-number-mode t)
+(column-number-mode t)
 ;;(size-indication-mode t)
 
 ;; show time in mode line
