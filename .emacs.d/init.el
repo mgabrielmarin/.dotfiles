@@ -148,14 +148,6 @@
   (set-face-attribute 'default nil :background "black")
   (set-face-attribute 'line-number nil :background "black"))
 
-;; (use-package catppuccin-theme
-;;   :config
-;;   (setq catppuccin-flavor 'mocha)
-;;   (load-theme 'catppuccin t)
-;;   (set-face-attribute 'default nil :background "black")
-;;   (set-face-attribute 'line-number nil :background "black")
-;;   )
-
 (use-package paredit
   :config
   (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
@@ -168,6 +160,8 @@
   :config
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize)))
+
+(use-package vterm)
 
 (use-package pdf-tools
   :config
@@ -207,6 +201,7 @@
 (use-package go-mode)
 (use-package typescript-mode)
 (use-package markdown-mode)
+(use-package yaml-mode)
 
 (use-package company
   :config

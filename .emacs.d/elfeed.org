@@ -4,6 +4,7 @@
 *** https://lukesmith.xyz/index.xml
 *** https://lwn.net/headlines/newrss
 ** Emacs :emacs:
+*** https://www.masteringemacs.org/feed
 *** https://protesilaos.com/codelog.xml
 *** https://emacsair.me/feed.xml
 *** http://trevorjim.com/feed.xml
@@ -23,7 +24,6 @@
 **** https://gigasquidsoftware.com/atom.xml
 ** Podcasts :podcasts:
 *** https://feeds.buzzsprout.com/1004689.rss
-
 ** News :news:
 *** International :int:
 **** https://disconnect.blog/rss/
