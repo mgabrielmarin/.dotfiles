@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 sudo apt -y update
-sudo apt -y install git gh ripgrep xclip tmux curl tldr jq python3-pip pipx
+sudo apt -y install emacs git gh ripgrep xclip tmux curl tldr jq python3-pip pipx net-tools
 
