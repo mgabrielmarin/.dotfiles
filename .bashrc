@@ -60,7 +60,7 @@ fi
 export EDITOR="vi"
 export TERMINAL="gnome-terminal"
 export TERMINAL_PROG="gnome-terminal"
-export BROWSER="chrome"
+export BROWSER="firefox"
 
 # Paths
 export PATH="$PATH:$HOME/.local/bin"
@@ -76,7 +76,9 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 
 # Add fzf to bash
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# NOTE: not needed in emacs
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Binds
-bind -x '"\C-f": tmux-sessionizer'
+# NOTE: not needed in emacs
+# bind -x '"\C-f": tmux-sessionizer'

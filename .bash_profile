@@ -18,7 +18,8 @@ export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 
 # Tmux sessionzer
-bind -x '"\C-f": tmux-sessionizer'
+# NOTE: not needed in emacs
+# bind -x '"\C-f": tmux-sessionizer'
 
 # Start graphical on user's current tty if not allready running.
 # [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx
