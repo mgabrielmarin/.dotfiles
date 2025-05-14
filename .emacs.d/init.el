@@ -1,14 +1,14 @@
 ;;; init.el --- Gabriel's Emacs configuration
-;;
+
 ;; Copyright © 2020-2025 Gabriel Marin
-;;
+
 ;; Author: Gabriel Marin <gbrlmarn@gmail.com>
 ;; URL: https://github.com/gbrlmarn/.emacs.d
-;;
+
 ;;; Commentary:
-;;
+
 ;; My personal Emacs configuration.
-;;
+
 ;;; Code:
 
 (require 'package)

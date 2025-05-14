@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+brew tap spring-io/tap
+brew install spring-boot
