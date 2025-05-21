@@ -9,3 +9,5 @@ Programs that I use and like
 ### GNU Stow
 `git clone https://github.com/gbrlmarn/.dotfiles.git ~/.dotfiles`  
 `stow .`
+### Fonts
+`fc-cache -fv`
