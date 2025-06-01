@@ -204,6 +204,7 @@
 (use-package typescript-mode)
 (use-package markdown-mode)
 (use-package yaml-mode)
+(use-package protobuf-mode)
 
 (use-package company
   :config
