@@ -164,7 +164,8 @@
     (exec-path-from-shell-initialize)))
 
 ;; (use-package vterm)
-(use-package eat) ;; alternative to vterm, cmake not needed
+;; replaces vterm, cmake not needed
+(use-package eat)
 
 (use-package pdf-tools
   :config
