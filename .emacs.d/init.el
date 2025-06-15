@@ -163,7 +163,8 @@
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize)))
 
-(use-package vterm)
+;; (use-package vterm)
+(use-package eat) ;; alternative to vterm, cmake not needed
 
 (use-package pdf-tools
   :config
