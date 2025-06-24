@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+git clone https://github.com/googlefonts/RobotoMono
+mkdir ~/.fonts/RobotoMono
+cp ./RobotoMono/fonts/otf/*.otf ~/.fonts/RobotoMono
+rm -rf ./RobotoMono
+fc-cache -f -v

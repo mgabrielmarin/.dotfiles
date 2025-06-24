@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+git clone https://github.com/adobe-fonts/source-sans
+mkdir ~/.fonts/SourceSans3/
+cp ./source-sans/OTF/*.otf ~/.fonts/SourceSans3/
+rm -rf ./source-sans
+fc-cache -f -v
