@@ -1,9 +1,9 @@
-;;; init.el --- Mihai Gabriel Marin Emacs configuration
+;;; init.el --- Gabriel Marin Emacs configuration
 
-;; Copyright © 2020-2025 Mihai Gabriel Marin
+;; Copyright © 2020-2025 Gabriel Marin
 
-;; Author: Mihai Gabriel Marin <mihaigmarin@gmail.com>
-;; URL: https://github.com/mihaigabrielmarin/.emacs.d
+;; Author: Gabriel Marin <gbrlmarn@gmail.com>
+;; URL: https://github.com/gbrlmarn/.emacs.d
 
 ;;; Commentary:
 
@@ -26,8 +26,8 @@
   (package-refresh-contents))
 
 ;; Username and Email
-(setq user-full-name "Mihai Gabriel Marin"
-      user-mail-address "mihagmarin@gmail.com")
+(setq user-full-name "Gabriel Marin"
+      user-mail-address "gbrlmarn@gmail.com")
 
 ;; Always load newest byte code
 (setq load-prefer-newer t)
