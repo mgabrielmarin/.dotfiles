@@ -144,11 +144,12 @@
 ;; Packages
 (use-package magit)
 
-(use-package dracula-theme
-  :config
-  (load-theme 'dracula t)
-  (set-face-attribute 'default nil :background "black")
-  (set-face-attribute 'line-number nil :background "black"))
+;; (use-package dracula-theme
+;;   :config
+;;   (load-theme 'dracula t)
+;;   (set-face-attribute 'default nil :background "black")
+;;   (set-face-attribute 'line-number nil :background "black"))
+(load-theme 'modus-vivendi t)
 
 (use-package paredit
   :config
