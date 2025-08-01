@@ -65,6 +65,10 @@
       display-time-format "%H:%M %d.%m.%Y")
 (display-time-mode t)
 
+;; theme
+(if (>= emacs-major-version 28)
+    (load-theme 'modus-vivendi t))
+
 ;; fonts
 (cond
  ((find-font (font-spec :name "Monaco"))
@@ -73,7 +77,7 @@
   (set-frame-font "CodeNewRoman 20"))
  ((find-font (font-spec :name "AnonymousPro"))
   (set-frame-font "AnonymousPro 20"))
-  ((find-font (font-spec :name "NotoSansMono"))
+ ((find-font (font-spec :name "NotoSansMono"))
   (set-frame-font "NotoSansMono 20"))
  ((find-font (font-spec :name "UbuntuMono"))
   (set-frame-font "UbuntuMono 20"))
@@ -144,63 +148,18 @@
 ;; Packages
 (use-package magit)
 
-;; (use-package dracula-theme
-;;   :config
-;;   (load-theme 'dracula t)
-;;   (set-face-attribute 'default nil :background "black")
-;;   (set-face-attribute 'line-number nil :background "black"))
-(load-theme 'modus-vivendi t)
-
-(use-package paredit
-  :config
-  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
-  (add-hook 'lisp-interaction-mode-hook #'paredit-mode)
-  (add-hook 'lisp-mode-hook #'paredit-mode)
-  (add-hook 'scheme-mode-hook #'paredit-mode)
-  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode))
-
 (use-package exec-path-from-shell
   :config
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize)))
 
-;; (use-package vterm)
-;; replaces vterm, cmake not needed
+;; emualte terminals, both are ok
+(use-package vterm)
 (use-package eat)
 
-(use-package pdf-tools
-  :config
-  (pdf-tools-install)
-  (setq pdf-view-midnight-colors '("#ffffff" . "#000000"))
-  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode 0))))
-
-(use-package clojure-mode
-  :config
-  (define-clojure-indent
-   (returning 1)
-   (testing-dynamic 1)
-   (testing-print 1))
-  (add-hook 'clojure-mode-hook #'paredit-mode)
-  (add-hook 'clojure-mode-hook #'subword-mode)
-  (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode))
-
-(use-package inf-clojure
-  :config
-  (add-hook 'inf-clojure-mode-hook #'paredit-mode)
-  (add-hook 'inf-clojure-mode-hook #'rainbow-delimiters-mode))
-
-(use-package cider
-  :config
-  (setq nrepl-log-messages t)
-  (add-hook 'cider-repl-mode-hook #'paredit-mode)
-  (add-hook 'cider-repl-mode-hook #'rainbow-delimiters-mode))
-
-(use-package slime
-  :config
-  (setq inferior-lisp-program "sbcl")
-  (add-hook 'lisp-mode-hook #'paredit-mode)
-  (add-hook 'lisp-mode-hook #'rainbow-delimiters-mode))
-
+;; programming languages modes
+(use-package clojure-mode)
+(use-package cider) ;; repl integration for clojure
 (use-package erlang)
 (use-package elixir-mode)
 (use-package go-mode)
@@ -208,6 +167,16 @@
 (use-package markdown-mode)
 (use-package yaml-mode)
 (use-package protobuf-mode)
+
+(use-package pdf-tools
+  :config
+  (pdf-tools-install)
+  (setq pdf-view-midnight-colors '("#ffffff" . "#000000"))
+  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode 0))))
+
+(use-package slime
+  :config
+  (setq inferior-lisp-program "sbcl"))
 
 (use-package company
   :config
