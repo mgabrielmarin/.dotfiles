@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# find git user specified at stdin
+
+curl --output /dev/null --silent  --head --fail "https://github.com/$1"
+if [ $? -eq 0 ]; then
+    echo "USER $1 EXISTS";
+else
+    echo "USER $1 DOESN'T EXIST";
+fi
