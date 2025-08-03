@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# Create needed directories, stderr is redirected /dev/null
+if [ ! -f $HOME/.local ]; then
+    mkdir $HOME/.local 2>/dev/null
+fi
+
+# Link configuration files
+ln -sfv $(pwd)/.vimrc $HOME/.vimrc
+ln -sfv $(pwd)/.zshrc $HOME/.zshrc
+ln -sfv $(pwd)/.zprofile $HOME/.zprofile
+ln -sfv $(pwd)/.bashrc $HOME/.bashrc
+ln -sfv $(pwd)/.bash_profile $HOME/.bash_profile
+ln -sfv $(pwd)/.local/scripts $HOME/.local/scripts
+ln -sfv $(pwd)/.tmux.conf $HOME/.tmux.conf
