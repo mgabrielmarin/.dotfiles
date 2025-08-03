@@ -4,18 +4,27 @@
 " $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+" Install plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent! curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    " source ~/.vimrc
+endif
+
 " Plugins
 call plug#begin()
-  Plug 'tpope/vim-sensible'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  Plug 'arzg/vim-colors-xcode'
-  Plug 'mbbill/undotree'
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-fugitive'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'dense-analysis/ale'
-  Plug 'vim-airline/vim-airline'
+    " Fuzzy finder
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+
+    " Plugins from tpope
+    Plug 'tpope/vim-sensible'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-fugitive'
+
+    " LSP and Linter
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'dense-analysis/ale'
 call plug#end()
 
 " Basic
@@ -24,21 +33,35 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set ai
-set number
+" set number
 set hlsearch
 set ruler
 set noswapfile
 set autoindent
 set smartindent
-set relativenumber
+" set relativenumber
 set autowrite
 
 " Color
-set termguicolors
-colorscheme xcodedark 
-hi Normal ctermbg=16 guibg=#000000
-hi LineNr ctermbg=16 guibg=#000000
-hi EndOfBuffer ctermbg=16 guibg=#000000
+colorscheme habamax
+" colorscheme quiet
+
+" highlight trailing spaces
+" src: https://www.reddit.com/r/linux/comments/fx5e4v/comment/fmw4tn8/
+highlight WhitespaceEOL ctermbg=darkred guibg=darkred
+match WhitespaceEOL /\s\+$/
+
+" When open a new file remember the cursor position of the last editing
+if has("autocmd")
+        " When editing a file, always jump to the last cursor position
+        autocmd BufReadPost * if line("'\"") | exe "'\"" | endif
+endif
+
+" Color customization
+" hi Normal ctermbg=16 guibg=#000000
+" hi LineNr ctermbg=16 guibg=#000000
+" hi EndOfBuffer ctermbg=16 guibg=#000000
+" hi StatusLine ctermbg=16 guibg=#000000
 
 " Remaps
 " Leader key
@@ -205,7 +228,9 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " Add (Neo)Vim's native statusline support
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+if !empty(glob('~/.vim/plugged/vim-airline'))
+    set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+endif
 
 " Mappings for CoCList
 " Show all diagnostics
@@ -224,21 +249,3 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
-" Undotree
-nnoremap <leader>u :UndotreeToggle<CR>
-if has("persistent_undo")
-    let target_path = expand('~/.undodir')
-
-    " create the directory and any parent directories
-    " if the location does not exist.
-    if !isdirectory(target_path)
-        call mkdir(target_path, "p", 0700)
-    endif
-
-    let &undodir=target_path
-    set undofile
-endif
-
-" Tmux-sessionizer
-nnoremap <leader><C-f> :!tmux neww tmux-sessionizer<CR>
