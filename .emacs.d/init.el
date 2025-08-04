@@ -66,8 +66,8 @@
 (display-time-mode t)
 
 ;; theme
-(if (>= emacs-major-version 28)
-    (load-theme 'modus-vivendi t))
+;; (if (>= emacs-major-version 28)
+;;     (load-theme 'modus-vivendi t))
 
 ;; fonts
 (cond
@@ -84,11 +84,11 @@
  )
 
 ;; display line numbers
-(global-display-line-numbers-mode)
-(menu-bar--display-line-numbers-mode-relative)
+;; (global-display-line-numbers-mode -1)
+;; (menu-bar--display-line-numbers-mode-relative -1)
 
 ;; enable y/n answers
-(fset 'yes-or-no-p 'y-or-n-p)
+;; (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Indentation
 (setq-default indent-tabs-mode nil) ;; don't use tab to indent
@@ -148,6 +148,14 @@
 ;; Packages
 (use-package magit)
 
+(use-package circadian
+  :config
+  (setq calendar-latitude 45.94)
+  (setq calendar-longitude 24.96)
+  (setq circadian-themes '((:sunrise . modus-operandi)
+                           (:sunset  . modus-vivendi)))
+  (circadian-setup))
+
 (use-package exec-path-from-shell
   :config
   (when (memq window-system '(mac ns))
@@ -181,10 +189,6 @@
 (use-package company
   :config
   (global-company-mode))
-
-(use-package lsp-mode
-  :init (setq lsp-keymap-prefix "C-c l")
-  :commands lsp)
 
 (use-package elfeed)
 (use-package elfeed-org
