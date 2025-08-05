@@ -5,11 +5,11 @@
 " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 " Install plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent! curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"if empty(glob('~/.vim/autoload/plug.vim'))
+"    silent! curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     " source ~/.vimrc
-endif
+"endif
 
 " Plugins
 call plug#begin()
@@ -41,6 +41,10 @@ set autoindent
 set smartindent
 " set relativenumber
 set autowrite
+set ignorecase
+set smartcase
+set incsearch
+set showmode
 
 " Color
 colorscheme habamax
