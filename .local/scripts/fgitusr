@@ -2,6 +2,13 @@
 
 # find git user specified at stdin
 
+# Check if usersname is respecting regex rules
+if [[ !("$1" =~ ^[0-9a-zA-Z]{1}[0-9a-zA-Z\-]*[0-9a-zA-Z]{1}$) ]]; then
+    echo "$1 DOESN'T MATCH REGEX"
+    exit 1
+fi
+
+# Check if usersname exists
 curl --output /dev/null --silent  --head --fail "https://github.com/$1"
 if [ $? -eq 0 ]; then
     echo "USER $1 EXISTS";
