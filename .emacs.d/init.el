@@ -175,6 +175,7 @@
 (use-package markdown-mode)
 (use-package yaml-mode)
 (use-package protobuf-mode)
+(use-package wgrep)
 
 (use-package pdf-tools
   :config
@@ -190,26 +191,11 @@
   :config
   (global-company-mode))
 
-(use-package elfeed)
-(use-package elfeed-org
-  :init
-  (setq rmh-elfeed-org-files
-        (list "~/.emacs.d/elfeed.org"))
-  :config
-  (elfeed-org))
-
 (use-package emms
   :config
   (emms-all)
   (emms-default-players)
   :bind (("C-c C-r" . emms-toggle-repeat-track)))
-
-(use-package org-drill
-  :config
-  (setq org-drill-learn-fraction 0.8))
-(use-package org-drill-table)
-
-(use-package wgrep)
 
 (use-package bash-completion
   :config
