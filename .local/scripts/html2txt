@@ -1,0 +1,20 @@
+#!/usr/bin/env perl
+# This script performs a http request and parse the html to plain text
+# then it displays it on stdout.
+
+use strict; use warnings;
+use LWP::UserAgent;
+use HTML::TreeBuilder;
+use HTML::FormatText;
+
+my $ua = LWP::UserAgent->new;
+my $response = $ua->get($ARGV[0]);
+my $html = $response->decoded_content;
+my $tree = HTML::TreeBuilder->new;
+$tree->parse($html);
+$tree->eof();
+my $fmt = HTML::FormatText->new;
+my $text = $fmt->format($tree);
+print $text;
+
+$tree->delete;
