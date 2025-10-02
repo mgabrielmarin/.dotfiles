@@ -1,8 +1,20 @@
-font-size = 20
-font-feature = -calt, -liga, -dlig # disable ligatures
-cursor-style = block
-cursor-style-blink = false
 window-height = 25
 window-width = 80
 quick-terminal-position = center
 
+# theme
+theme = Apple System Colors
+
+# disable ligatures
+font-feature = -calt, -liga, -dlig
+font-size = 20
+font-family = Monaco
+
+cursor-style = block
+cursor-style-blink = false
+# always show block cursor (vi mode)
+shell-integration-features = no-cursor
+# shell-integration = detect
+
+# don't delete line when using `Cmd+[`
+selection-clear-on-typing = false
