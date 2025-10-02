@@ -2,3 +2,7 @@ font-size = 20
 font-feature = -calt, -liga, -dlig # disable ligatures
 cursor-style = block
 cursor-style-blink = false
+window-height = 25
+window-width = 80
+quick-terminal-position = center
+
