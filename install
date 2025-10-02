@@ -13,3 +13,4 @@ ln -sfv $(pwd)/.bashrc $HOME/.bashrc
 ln -sfv $(pwd)/.bash_profile $HOME/.bash_profile
 ln -sfv $(pwd)/.local/scripts $HOME/.local/scripts
 ln -sfv $(pwd)/.tmux.conf $HOME/.tmux.conf
+ln -sfv $(pwd)/.config/ghostty/config $HOME/.config/ghostty/config
