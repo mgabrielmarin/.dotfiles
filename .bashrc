@@ -9,7 +9,7 @@
 PS1='[\u@\h \W]\$ '
 
 # vi mode
-# set -o vi
+set -o vi
 
 # History
 # don't put duplicate lines or lines starting with space in the history.
@@ -31,9 +31,6 @@ shopt -s checkwinsize
 
 # ls
 alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
 
 # grep
 alias grep='grep --color=auto'
@@ -58,8 +55,8 @@ fi
 
 # Defaults
 export EDITOR="vi"
-export TERMINAL="gnome-terminal"
-export TERMINAL_PROG="gnome-terminal"
+export TERMINAL="ghostty"
+export TERMINAL_PROG="ghostty"
 export BROWSER="firefox"
 
 # Paths
@@ -76,9 +73,4 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 
 # Add fzf to bash
-# NOTE: not needed in emacs
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Binds
-# NOTE: not needed in emacs
-# bind -x '"\C-f": tmux-sessionizer'
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
