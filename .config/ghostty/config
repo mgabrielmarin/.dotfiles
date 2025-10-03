@@ -8,7 +8,9 @@ theme = Apple System Colors
 # disable ligatures
 font-feature = -calt, -liga, -dlig
 font-size = 20
+# Go first for 'Monaco' if it isn't available go for 'Vera'
 font-family = Monaco
+font-family = Bitstream Vera Sans Mono
 
 cursor-style = block
 cursor-style-blink = false
