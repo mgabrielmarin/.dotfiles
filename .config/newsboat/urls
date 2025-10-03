@@ -1,4 +1,4 @@
-# Articles 
+# Articles
 https://blog.rust-lang.org/feed.xml
 https://news.ycombinator.com/rss
 https://hnrss.org/newest
@@ -6,13 +6,12 @@ https://hnrss.org/newcomments
 https://suckless.org/atom.xml
 https://lukesmith.xyz/index.xml luke
 https://videos.lukesmith.xyz/feeds/videos.xml?sort=-publishedAt&isLocal=true luke
-https://www.libhunt.com/feed 
+https://www.libhunt.com/feed
 
 # Lisp
 https://batsov.com/atom.xml lisp
-http://community.schemewiki.org/?c=rss lisp
 
-# Linux 
+# Linux
 https://archlinux.org/feeds/news/ linux
 https://www.freebsd.org/news/feed.xml linux
 https://people.kernel.org/linusw/feed linux
@@ -23,6 +22,9 @@ https://www.jurnalul.ro/rss ro news
 https://www.libertatea.ro/feed ro news
 https://www.gandul.ro/feed ro news
 https://www.hotnews.ro/rss ro news
+https://recorder.ro/feed/ ro news
+
+# Reddit
 
 # Videos
 # Default url pattern:
