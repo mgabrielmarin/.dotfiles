@@ -14,7 +14,7 @@ This script will link config files
 
 ### GNU Stow
 ```
-git clone https://github.com/gbrlmarn/.dotfiles.git ~/.dotfiles
+git clone <url> ~/.dotfiles
 stow .
 ```
 
