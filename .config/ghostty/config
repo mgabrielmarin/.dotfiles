@@ -10,6 +10,7 @@ font-feature = -calt, -liga, -dlig
 font-size = 20
 # Go first for 'Monaco' if it isn't available go for 'Vera'
 font-family = Monaco
+font-family = Menlo
 font-family = Bitstream Vera Sans Mono
 
 cursor-style = block

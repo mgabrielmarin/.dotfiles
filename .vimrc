@@ -69,7 +69,7 @@ endif
 
 " Remaps
 " Leader key
-let mapleader = ","
+" let mapleader = ","
 
 " Reload config
 nnoremap <leader>so :so ~/.vimrc<CR>
