@@ -2,8 +2,8 @@
 
 ;; Copyright © 2020-2025 Gabriel Marin
 
-;; Author: Gabriel Marin <mihaigmarin@gmail.com>
-;; URL: https://github.com/mihaigmarin/.emacs.d
+;; Author: Gabriel Marin <gabrielmarindev@gmail.com>
+;; URL: https://github.com/mgabrielmarin/.emacs.d
 
 ;;; Commentary:
 
@@ -27,7 +27,7 @@
 
 ;; Username and Email
 (setq user-full-name "Gabriel Marin"
-      user-mail-address "mihaigmarin@gmail.com")
+      user-mail-address "gabrielmarindev@gmail.com")
 
 ;; Always load newest byte code
 (setq load-prefer-newer t)
