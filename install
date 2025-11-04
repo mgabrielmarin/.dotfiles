@@ -3,6 +3,8 @@
 # Create needed directories, stderr is redirected /dev/null
 if [ ! -f $HOME/.local ]; then
     mkdir $HOME/.local 2>/dev/null
+    mkdir $HOME/.config/ghostty 2>/dev/null
+    mkdir $HOME/.config/wezterm 2>/dev/null
 fi
 
 # Link configuration files
@@ -14,3 +16,4 @@ ln -sfv $(pwd)/.bash_profile $HOME/.bash_profile
 ln -sfv $(pwd)/.local/scripts $HOME/.local/scripts
 ln -sfv $(pwd)/.tmux.conf $HOME/.tmux.conf
 ln -sfv $(pwd)/.config/ghostty/config $HOME/.config/ghostty/config
+ln -sfv $(pwd)/.config/wezterm/wezterm.lua $HOME/.config/wezterm/wezterm.lua
