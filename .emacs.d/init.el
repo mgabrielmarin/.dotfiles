@@ -66,8 +66,8 @@
 (display-time-mode t)
 
 ;; theme
-;; (if (>= emacs-major-version 28)
-;;     (load-theme 'modus-vivendi t))
+(if (>= emacs-major-version 28)
+    (load-theme 'modus-vivendi t))
 
 ;; fonts
 (cond
@@ -75,6 +75,8 @@
   (set-frame-font "Monaco 20"))
  ((find-font (font-spec :name "CodeNewRoman"))
   (set-frame-font "CodeNewRoman 20"))
+ ((find-font (font-spec :name "Google Sans Code"))
+  (set-frame-font "Google Sans Code 20"))
  ((find-font (font-spec :name "AnonymousPro"))
   (set-frame-font "AnonymousPro 20"))
  ((find-font (font-spec :name "NotoSansMono"))
@@ -148,13 +150,13 @@
 ;; Packages
 (use-package magit)
 
-(use-package circadian
-  :config
-  (setq calendar-latitude 45.94)
-  (setq calendar-longitude 24.96)
-  (setq circadian-themes '((:sunrise . modus-operandi)
-                           (:sunset  . modus-vivendi)))
-  (circadian-setup))
+;; (use-package circadian
+;;   :config
+;;   (setq calendar-latitude 45.94)
+;;   (setq calendar-longitude 24.96)
+;;   (setq circadian-themes '((:sunrise . modus-operandi)
+;;                            (:sunset  . modus-vivendi)))
+;;   (circadian-setup))
 
 (use-package exec-path-from-shell
   :config
@@ -177,11 +179,11 @@
 (use-package protobuf-mode)
 (use-package wgrep)
 
-(use-package pdf-tools
-  :config
-  (pdf-tools-install)
-  (setq pdf-view-midnight-colors '("#ffffff" . "#000000"))
-  (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode 0))))
+;; (use-package pdf-tools
+;;   :config
+;;   (pdf-tools-install)
+;;   (setq pdf-view-midnight-colors '("#ffffff" . "#000000"))
+;;   (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode 0))))
 
 (use-package slime
   :config
