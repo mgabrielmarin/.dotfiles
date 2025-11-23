@@ -1,4 +1,4 @@
-" Gabriel Marin .vimrc
+" Mihai Gabriel Marin .vimrc
 "
 " Download Plug first:
 " $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -25,6 +25,11 @@ call plug#begin()
     " LSP and Linter
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'dense-analysis/ale'
+
+	" Color
+	Plug 'arzg/vim-colors-xcode'
+	Plug 'google/vim-colorscheme-primary'
+	Plug 'mihaigmarin/vim-colorscheme-gemini'
 call plug#end()
 
 " Basic
@@ -47,8 +52,16 @@ set incsearch
 set showmode
 
 " Color
-colorscheme habamax
+" colorscheme habamax
 " colorscheme quiet
+" colorscheme xcodedark
+" set background=dark
+" colorscheme primary
+" hi SignColumn ctermbg=16
+" set t_Co=256
+set t_Co=256
+set background=dark
+colorscheme gemini
 
 " highlight trailing spaces
 " src: https://www.reddit.com/r/linux/comments/fx5e4v/comment/fmw4tn8/
@@ -253,3 +266,19 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Custom functions
+function! HighlightGroupAtCursor()
+    " Get the name of the syntax item under the cursor.
+    let l:synID = synID(line("."), col("."), 1)
+    let l:synName = synIDattr(l:synID, "name")
+
+    " Get the highlight group linked to that syntax item.
+    let l:hlGroup = synIDattr(synIDtrans(l:synID), "name")
+
+    " Print the information to the command line.
+    echo "Syntax Item: " . l:synName . " | Highlight Group: " . l:hlGroup
+endfunction
+
+" Create a custom command to easily call the function: :Hl
+command! Hl call HighlightGroupAtCursor()
