@@ -57,14 +57,6 @@
 (column-number-mode t)
 ;;(size-indication-mode t)
 
-;; show time in mode line
-(setq display-time-day-and-date t
-      display-time-24hr-format t
-      display-time-default-load-average nil
-      display-time-interval 60
-      display-time-format "%H:%M %d.%m.%Y")
-(display-time-mode t)
-
 ;; theme
 (if (>= emacs-major-version 28)
     (load-theme 'modus-vivendi t))
@@ -88,9 +80,6 @@
 ;; display line numbers
 ;; (global-display-line-numbers-mode -1)
 ;; (menu-bar--display-line-numbers-mode-relative -1)
-
-;; enable y/n answers
-;; (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Indentation
 (setq-default indent-tabs-mode nil) ;; don't use tab to indent
@@ -149,25 +138,6 @@
 
 ;; Packages
 (use-package magit)
-
-;; (use-package circadian
-;;   :config
-;;   (setq calendar-latitude 45.94)
-;;   (setq calendar-longitude 24.96)
-;;   (setq circadian-themes '((:sunrise . modus-operandi)
-;;                            (:sunset  . modus-vivendi)))
-;;   (circadian-setup))
-
-(use-package exec-path-from-shell
-  :config
-  (when (memq window-system '(mac ns))
-    (exec-path-from-shell-initialize)))
-
-;; emualte terminals, both are ok
-(use-package vterm)
-(use-package eat)
-
-;; programming languages modes
 (use-package clojure-mode)
 (use-package cider) ;; repl integration for clojure
 (use-package erlang)
@@ -179,11 +149,9 @@
 (use-package protobuf-mode)
 (use-package wgrep)
 
-;; (use-package pdf-tools
-;;   :config
-;;   (pdf-tools-install)
-;;   (setq pdf-view-midnight-colors '("#ffffff" . "#000000"))
-;;   (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode 0))))
+;; emualte terminals, both are ok
+;;(use-package vterm)
+;;(use-package eat)
 
 (use-package slime
   :config
@@ -193,15 +161,14 @@
   :config
   (global-company-mode))
 
-(use-package emms
-  :config
-  (emms-all)
-  (emms-default-players)
-  :bind (("C-c C-r" . emms-toggle-repeat-track)))
-
 (use-package bash-completion
   :config
   (bash-completion-setup))
+
+(use-package exec-path-from-shell
+  :config
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)))
 
 (use-package pinentry
   ;; :defer nil ;; NOTE: not sure if this is needed
